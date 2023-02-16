@@ -52,7 +52,7 @@ public class ServicePlanning  {
         
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
-       System.out.println("reservation with id event = "+planning.getIdEv()+" is added successfully");
+       System.out.println("planning with id event = "+planning.getIdEv()+" is added successfully");
        
     }
 
@@ -98,7 +98,7 @@ public class ServicePlanning  {
            
            // pst.setInt(5, planning.getIdP());
             pst.executeUpdate();
-            System.out.println("participants number of event " + planning.getNomActivite() + " is updated successfully");
+            System.out.println("nom activite of event " + planning.getNomActivite() + " is updated successfully");
 
     }
     
@@ -123,11 +123,11 @@ public class ServicePlanning  {
          System.out.println("after"+tempEvent);
           PreparedStatement   pst = cnx.prepareStatement(requete); 
           pst.executeUpdate();
-            System.out.println("reservation with idP="+idP+" is deleted successfully");
+            System.out.println("planning with idP="+idP+" is deleted successfully");
         
         
        }catch (SQLException ex) {
-            System.out.println("error in delete reservation " + ex.getMessage());
+            System.out.println("error in delete planning " + ex.getMessage());
         }
         
         
@@ -142,7 +142,7 @@ public class ServicePlanning  {
          List<Planning> temp = new ArrayList<>();
          ServiceEvent es= new  ServiceEvent();
         Evenement event = new Evenement();
-String req = "SELECT planning.idP`, planning.hour, planning.nomActivite, planning.datePL, evenement.idEv as idEv FROM `planning`,`evenement` WHERE planning.idEv=evenement.idEv";
+String req = "SELECT * FROM  `planning`";
         PreparedStatement ps = cnx.prepareStatement(req);
 
         ResultSet rs = ps.executeQuery();
