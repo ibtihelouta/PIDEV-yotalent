@@ -37,9 +37,9 @@ public class YYotalent {
 
       //  Categorie p = new Categorie(50, "Fakhreddine");
         
-      Evenement pt = new Evenement( 64,"naDine ","12 fevrier 2001","14 mars 2001","mAAoo");
+      Evenement pt = new Evenement( 62,"aabb ","12 fevrier 2001","14 mars 2001","mAAoo");
          Evenement pt1 = new Evenement( 63,"ibtihel","3 mars 2003","7 mai 2003","hhhje");
-          Planning p1 = new Planning("2h", "nadine ", " 14 mars  2001",63);
+          Planning p1 = new Planning("2h", "maloukti ", " 14 mars  2001",63);
                    Planning p2 = new Planning( "5H", "mohamed", " 15 mars  2001");
 
         //ServiceCategorie sp = new ServiceCategorie();
@@ -49,13 +49,15 @@ public class YYotalent {
         try {
              //sv.createOne(pt);
               //sv.createOne(pt1);
-              //sv.updateOne(pt);
-             //sv.deletOne(pt);
+              // sv.updateOne(pt);
+            sv.deletOne(69);
           // pv.createOne(p1);
          // pv.updateOne(p2,15);
-              pv.deletOne( 15);
-            //System.out.println(sv.selectAll());
-           System.out.println(pv.selectAll());
+             // pv.deletOne( 15);
+            System.out.println(sv.selectAll());
+            // System.out.println(sv.SelectOneEvent(65));
+          // System.out.println(pv.selectAll());
+           // System.out.println(pv. FetchOnePlan(23));
         } catch (SQLException e) {
             System.out.println(e.getMessage()); 
         }

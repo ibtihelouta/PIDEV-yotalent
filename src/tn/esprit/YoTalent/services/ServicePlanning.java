@@ -19,6 +19,8 @@ import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -135,6 +137,39 @@ public class ServicePlanning  {
         
         
     }
+    
+     public ObservableList<Planning> FetchPlanning()throws SQLException{
+       ObservableList<Planning> planning = FXCollections.observableArrayList();
+        ServiceEvent es= new  ServiceEvent();
+        Evenement event = new Evenement();
+        String req = "SELECT * FROM `planning`";
+         PreparedStatement ps = cnx.prepareStatement(req);
+
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()){
+
+            Planning Cat = new Planning();
+
+            Cat.setIdP(rs.getInt(1));
+            Cat.setHour(rs.getString("hour"));
+            Cat.setNomActivite(rs.getString(3));
+            Cat.setDatePL(rs.getString("datePL"));
+            Evenement tempEvent= es.SelectOneEvent(rs.getInt("idEv"));
+           
+
+            planning.add(Cat);
+
+        }
+
+
+        return planning;
+        
+    }
+    
+    
+    
+    
 
     
     public List<Planning> selectAll() throws SQLException {

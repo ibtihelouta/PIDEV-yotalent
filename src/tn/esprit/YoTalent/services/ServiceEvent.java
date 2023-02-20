@@ -10,18 +10,24 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.utils.MaConnexion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author USER
  */
-public class ServiceEvent implements IService<Evenement> {
+public class ServiceEvent 
+        //implements IService<Evenement> 
+{
 
      private Connection cnx;
 
@@ -30,15 +36,16 @@ public class ServiceEvent implements IService<Evenement> {
         
     }
 
-    @Override
+    
     public void createOne(Evenement evenement) throws SQLException {
+        String dateDEv,dateFEv= DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDateTime.now());
       String req =   "INSERT INTO `evenement`(`nomEv`, `dateDEv`, `dateFEv`, `localisation`) " + "VALUES ('"+evenement.getNomEv()+"','"+evenement.getDateDEv()+"','"+evenement.getDateFEv()+"','"+evenement.getLocalisation()+"')";
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
         System.out.println("Event ajouté !");
     }
 
-    @Override
+  
     public void updateOne(Evenement evenement) throws SQLException {
         
         String req =  "UPDATE `evenement` SET nomEv=?,dateDEv=?,dateFEv=?,localisation=? WHERE idEv=?";
@@ -58,8 +65,8 @@ public class ServiceEvent implements IService<Evenement> {
 
     
 
-    @Override
-    public void deletOne(Evenement evenement) throws SQLException {
+   /* @Override
+   public void deletOne(Evenement evenement) throws SQLException {
    
      String req = "DELETE FROM `evenement` WHERE idEv=?";
      
@@ -72,10 +79,39 @@ public class ServiceEvent implements IService<Evenement> {
             System.out.println("error in delete event " + ex.getMessage());
         }
      
+    }*/
+    
+    
+    public void supprimerEvent(Evenement e)throws SQLException{
+    
+    String req = "delete from evenement where idEv = ?";
+    
+        PreparedStatement ps = cnx.prepareStatement(req);
+        ps.setInt(1, e.getIdEv());
+        ps.executeUpdate();
+        System.out.println("event with id= " + e.getIdEv() + "  is deleted successfully");
     }
+    
+    
+    
+    
+    
+   public void deletOne(int idEv)  {
+        String req = "delete from `evenement` where idEv=?";
+        try {
+           PreparedStatement pst =cnx.prepareStatement(req);
+            pst.setInt(1, idEv);
+            pst.executeUpdate();
+            System.out.println("event with id="+idEv+" is deleted successfully");
+        } catch (SQLException ex) {
+            System.out.println("error in delete event " + ex.getMessage());
+        }
+    }
+      
+   
 
-    @Override
-    public List<Evenement> selectAll() throws SQLException {
+    
+   public List<Evenement> selectAll() throws SQLException {
           List<Evenement> temp = new ArrayList<>();
 
         String req = "SELECT * FROM `Evenement`";
@@ -100,7 +136,39 @@ public class ServiceEvent implements IService<Evenement> {
 
 
         return temp;
+    
+    
+   }
+   public ObservableList<Evenement> FetchEvents()throws SQLException{
+       ObservableList<Evenement> events = FXCollections.observableArrayList();
+        String req = "SELECT * FROM `evenement`";
+        PreparedStatement ps = cnx.prepareStatement(req);
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()){
+
+            Evenement Cat = new Evenement();
+
+            Cat.setIdEv(rs.getInt(1));
+            Cat.setNomEv(rs.getString("nomEv"));
+            Cat.setDateDEv(rs.getString("dateDEv"));
+            Cat.setDateFEv(rs.getString(4));
+             Cat.setLocalisation(rs.getString("localisation"));
+           
+
+            events.add(Cat);
+
+        }
+
+
+        return events;
+    
+    
     }
+   
+   
+   
+    
     
     public Evenement SelectOneEvent(int idEv){
         Evenement event = new Evenement();
