@@ -5,6 +5,8 @@
  */
 package tn.esprit.YoTalent.services;
 
+import java.awt.Font;
+import java.io.FileOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,10 +19,13 @@ import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.utils.MaConnexion;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
+import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javax.swing.text.Document;
+import static javax.swing.text.StyleConstants.FontFamily;
 
 /**
  *
@@ -106,6 +111,10 @@ public class ServicePlanning  {
     
     
     
+     
+
+    
+    
     
     
     public void deletOne( int idP) {
@@ -132,11 +141,22 @@ public class ServicePlanning  {
             System.out.println("error in delete planning " + ex.getMessage());
         }
         
-        
-        
-        
+             
         
     }
+    
+     public void supprimerEvent(Planning e)throws SQLException{
+    
+    String req = "delete from planning where idP = ?";
+    
+        PreparedStatement ps = cnx.prepareStatement(req);
+        ps.setInt(1, e.getIdP());
+        ps.executeUpdate();
+        System.out.println("event with id= " + e.getIdP() + "  is deleted successfully");
+    }
+    
+    
+    
     
      public ObservableList<Planning> FetchPlanning()throws SQLException{
        ObservableList<Planning> planning = FXCollections.observableArrayList();
@@ -203,6 +223,66 @@ String req = "SELECT * FROM  `planning`";
         
         
     }
+
+   /* public void updateOne(Planning up) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    */
+    
+    
+     public ObservableList<Planning> searchByPlanning(String nomActivite ) throws SQLException{
+        String qry="SELECT * FROM planning where nomActivite LIKE '%"+nomActivite+"%'" ;
+                  System.out.println(qry);
+            cnx = MaConnexion.getInstance().getCnx();
+            Statement stm = cnx.createStatement();
+            ResultSet rs = stm.executeQuery(qry);
+        ObservableList<Planning>  list = FXCollections.observableArrayList()  ; 
+        while(rs.next()){
+        Planning a = new Planning(rs.getString("hour"),rs.getString("nomActivite"),rs.getString("datePL")); 
+        list.add(a) ;
+        
+        }
+         
+
+        return list ;
+    } 
+     
+      public ObservableList<Planning> getAllTriNom() {
+        ObservableList<Planning> list = FXCollections.observableArrayList();
+        try {
+         //   String req = "Select * from espacetalent where roles like '%[]%' order by nom";
+                String req = "Select * from planning  order by nomActivite";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            while (rs.next()) {
+            //    EspaceTalent u = new EspaceTalent(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("username"), rs.getString("email"), rs.getString("file"), rs.getInt("etat"), rs.getDate("created_at"));
+                Planning a = new Planning(rs.getString("hour"),rs.getString("nomActivite"),rs.getString("datePL")); 
+        list.add(a) ;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return list;
+    }
+     
+     
+     
+      
+      
+     
+          }
+     
+     
+     
+     
+     
+    
+   
+        
+
+    
     
         
     
@@ -212,4 +292,4 @@ String req = "SELECT * FROM  `planning`";
         
         
     
-}
+

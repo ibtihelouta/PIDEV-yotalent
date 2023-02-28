@@ -12,6 +12,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -22,10 +23,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
@@ -33,11 +37,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.services.ServiceEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import tn.esprit.YoTalent.utils.MaConnexion;
 /**
@@ -94,18 +100,21 @@ public class InterfaceEventController implements Initializable {
 
     @FXML
     private ImageView NextP;
-
+@FXML
+    private ImageView  Back;
     @FXML
     private Button AddEv;
 
     @FXML
     private Label LocalisationError;
-
+@FXML
+    private Button triNom;
 
     
        private Connection cnx;
+  ;
     @FXML
-    private Button Planning;
+    private TextField Recherche;
 
     public InterfaceEventController(){
         cnx = MaConnexion.getInstance().getCnx();
@@ -130,13 +139,12 @@ public class InterfaceEventController implements Initializable {
     } 
     public void getEvents() throws SQLException {
      
-       
-    
+      
      
    colNomEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("nomEv"));
-   colLocalisation.setCellValueFactory(new PropertyValueFactory<Evenement,String>("localisation"));
-   colDateDEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("dateDEv"));
+ colDateDEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("dateDEv"));
    colDateFEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("dateFEv"));
+     colLocalisation.setCellValueFactory(new PropertyValueFactory<Evenement,String>("localisation"));
     
     ServiceEvent es=new ServiceEvent();
        events= es.FetchEvents();
@@ -147,31 +155,106 @@ public class InterfaceEventController implements Initializable {
    
 
     @FXML
-    private void btnModifyEv(ActionEvent event) {
-        try{
-     
-         Date DateDebut = Date.valueOf(this.DateDEv.getValue());
-         Date DateFin = Date.valueOf(this.DateFEv.getValue());
-         Evenement up=new Evenement(Integer.valueOf(this.idEvM.getText()),this.NomEv.getText(),String.valueOf(DateDebut),String.valueOf(DateFin),this.Localisation.getText());
-         es.updateOne(up);
+    private void btnModifyEv(ActionEvent event) throws SQLException {
+         String nomEv,LocalisationE;
+         
+       
+         if ((NomEv.getText().length()==0)||(Localisation.getText().length()==0))
+                { Alert alert = new Alert(AlertType.ERROR);
+                   alert.setTitle("Error ");
+                    alert.setHeaderText("Error!");
+                    alert.setContentText("Fields cannot be empty");
+                    
+                    alert.showAndWait();}
+         
+          if ((NomEv.getText().length() > 20)||(Localisation.getText().length()>20) ) {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Error");
+        alert.setHeaderText("Invalid input");
+        alert.setContentText("Please enter a title with a length of maximum 20 characters.");
+        alert.showAndWait();
+        return;
+    }  
+           else if (NoDate()== false){
+                   Alert alert = new Alert(AlertType.ERROR);
+                   alert.setTitle("Error ");
+                    alert.setHeaderText("Error!");
+                    alert.setContentText("End date should be greater than begin date");
+                    alert.showAndWait();
+         }
+          
+          
+          
+          
+          
+           else{
+             
+           
+           try{
+            nomEv = String.valueOf(NomEv.getText());
+          
+        }catch(Exception exc){
+            System.out.println("name exception");
+            return;
+        }  
+           try{
+            LocalisationE = String.valueOf(Localisation.getText());
+           
+        }catch(Exception exc){
+            System.out.println("localisation exception");
+            
+            
+            
+            
+            
+
+            return;
+        } 
+         
+          
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information ");
             alert.setHeaderText("Event update");
             alert.setContentText("Event updated successfully!");
             alert.showAndWait();
+            
+            
+             Evenement e1 = AfficherEv.getItems().get(AfficherEv.getSelectionModel().getSelectedIndex());
+            try{
+     
+         Date DateDebut = Date.valueOf(this.DateDEv.getValue());
+         Date DateFin = Date.valueOf(this.DateFEv.getValue());
+        
+         
+        
+             Evenement up=new Evenement(Integer.valueOf(this.idEvM.getText()),this.NomEv.getText(),String.valueOf(DateDebut),String.valueOf(DateFin),this.Localisation.getText());
+         es.updateOne(up);
+            
             getEvents();
         } catch(Exception ex){
             System.out.println("fama ghalta2");
         }
        NomEv.clear();
-       Localisation.clear();
        DateDEv.setValue(null);
        DateFEv.setValue(null);
+         Localisation.clear();
         
-        
-        
-        
+       
+     
+    
+       
+ 
+       
+           
     }
+     
+     
+    }
+ 
+    
+     
+        
+    
 
     @FXML
     private void btnDeleteEv(ActionEvent event) throws SQLException {
@@ -237,7 +320,18 @@ public class InterfaceEventController implements Initializable {
                    alert.setTitle("Error ");
                     alert.setHeaderText("Error!");
                     alert.setContentText("Fields cannot be empty");
+                    
                     alert.showAndWait();}
+         
+         if ((NomEv.getText().length() > 20)||(Localisation.getText().length()>20) ) {
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText("Invalid input");
+        alert.setContentText("Please enter a title with a length of maximum 20 characters.");
+        alert.showAndWait();
+        return;
+    }  
+         
          
          else if (NoDate()== false){
                    Alert alert = new Alert(AlertType.ERROR);
@@ -246,6 +340,7 @@ public class InterfaceEventController implements Initializable {
                     alert.setContentText("End date should be greater than begin date");
                     alert.showAndWait();
          }
+         
          else{
              
            
@@ -260,11 +355,16 @@ public class InterfaceEventController implements Initializable {
             LocalisationE = String.valueOf(Localisation.getText());
            
         }catch(Exception exc){
-            System.out.println("name exception");
+            System.out.println("localisation exception");
+            
+            
+            
+            
+            
 
             return;
         } 
-            Evenement ev=new Evenement(NomEv.getText(),Localisation.getText(),String.valueOf(DateDEv.getValue()),String.valueOf(DateFEv.getValue()));
+            Evenement ev=new Evenement(NomEv.getText(),String.valueOf(DateDEv.getValue()),String.valueOf(DateFEv.getValue()),Localisation.getText());
          es.createOne(ev);
          getEvents();
           //FXMLLoader loader = new FXMLLoader(getClass().getResource("DisplayEvents.fxml"));
@@ -277,61 +377,66 @@ public class InterfaceEventController implements Initializable {
         
     }
 
-    @FXML
-    private void btnPlanning(ActionEvent event) {
-       
-      /*  try {
-            //navigation
-            Parent loader = FXMLLoader.load(getClass().getResource("InterfacePlanning.fxml"));
-            change.getScene().setRoot(loader);
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        }*/
-      
-      
-           try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/AfficherPersonFXML.fxml"));
-            
-            Parent root = loader.load();            
-            InterfacePlanningController fx = loader.getController();
-            
-            ServiceEvent sp = new ServiceEvent();
-            String msg = sp.selectAll().toString();
-            //    fx.setLbAffiche(msg);
-            
-            Planning.getScene().setRoot(root);
-            
-//            Stage stage = new Stage();
-//            stage.setTitle("Afficher Persons");
-//            stage.setScene(scene); 
-//            stage.show();
-            
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } catch (SQLException ex) {
-            Logger.getLogger(InterfaceEventController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-    }
+
 
     @FXML
-    private void choisirEvent(MouseEvent event) {
+   
+      private void choisirEvent(MouseEvent event) {
         
         Evenement e = AfficherEv.getItems().get(AfficherEv.getSelectionModel().getSelectedIndex());
         
         //idLabel.setText(String.valueOf(e.getId_event()));
-        idED.setText(String.valueOf(e.getIdEv()));
+       idED.setText(String.valueOf(e.getIdEv()));
         NomEv.setText(e.getNomEv());
-        Localisation.setText(e.getLocalisation());
-      // DateDEv.setValue((e.getDateDEv()));
+         
+       //DateDEv.setValue((e.getDateDEv()));
+       
+       Localisation.setText(e.getLocalisation());
         
     }
 
         
+      @FXML
+private void handleArrowImageClickE(MouseEvent event) throws IOException {
+    Parent nextScene = FXMLLoader.load(getClass().getResource("InterfacePlanning.fxml"));
+    Scene scene = new Scene(nextScene);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(scene);
+    stage.show();
+}
+
+@FXML
+private void handleBackArrowImageClickE(MouseEvent event) throws IOException {
+    Parent previousScene = FXMLLoader.load(getClass().getResource("path/to/login.fxml"));
+    Scene scene = new Scene(previousScene);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(scene);
+    stage.show();
+}  
+
+    @FXML
+    private void Recherche(KeyEvent event)throws SQLException {
         
+        
+         Evenement p=new Evenement();
+ServiceEvent sp = new ServiceEvent();
+       AfficherEv.setItems(sp.searchByEvenement(Recherche.getText()))  ;
+    }
+    
+    @FXML
+    void triNom(ActionEvent event) {
+          
+   colNomEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("nomEv"));
+ colDateDEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("dateDEv"));
+   colDateFEv.setCellValueFactory(new PropertyValueFactory<Evenement,String>("dateFEv"));
+     colLocalisation.setCellValueFactory(new PropertyValueFactory<Evenement,String>("localisation"));
+        events=es.getAllTriNom();
+             AfficherEv.setItems(events);
+    }
         
     }
+        
+    
     
     
    

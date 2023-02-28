@@ -236,7 +236,7 @@
           <TableColumn fx:id="colNomEv" prefWidth="61.59991455078125" text="NomEv" />
             <TableColumn fx:id="colDateDEv" prefWidth="107.0" text=" DateDEv" />
             <TableColumn fx:id="colDateFEv" prefWidth="87.0" text="DateFEv" />
-            <TableColumn fx:id="colLocalisation" prefWidth="107.0" text=" Localisation" />
+            <TableColumn fx:id="colLocalisation" prefWidth="117.0" text=" Localisation" />
         </columns>
       </TableView>
       <Label layoutX="293.0" layoutY="241.0" text="Delete Event :" textFill="#5f1163">
@@ -246,13 +246,13 @@
       </Label>
       <TextField fx:id="idED" layoutX="495.0" layoutY="243.0" prefHeight="26.0" prefWidth="51.0" />
       <Button fx:id="DeleteEv" blendMode="COLOR_BURN" layoutX="558.0" layoutY="243.0" mnemonicParsing="false" onAction="#btnDeleteEv" prefHeight="31.0" prefWidth="104.0" text="      Delete" />
-      <ImageView fx:id="NextP" fitHeight="30.0" fitWidth="50.0" layoutX="747.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="NextP" fitHeight="30.0" fitWidth="50.0" layoutX="747.0" layoutY="162.0" onMouseClicked="#handleArrowImageClickE" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/fleche-droite%20(1).png" />
          </image>
       </ImageView>
-      <Button fx:id="AddEv" blendMode="COLOR_BURN" layoutX="539.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnAddEv" prefHeight="23.0" prefWidth="117.0" text="Add" />
-      <ImageView fitHeight="23.0" fitWidth="18.0" layoutX="563.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <Button fx:id="AddEv" blendMode="COLOR_BURN" layoutX="603.0" layoutY="158.0" mnemonicParsing="false" onAction="#btnAddEv" prefHeight="23.0" prefWidth="117.0" text="Add" />
+      <ImageView fitHeight="23.0" fitWidth="18.0" layoutX="610.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/331471276_544728800792876_9117012782869713523_n.png" />
          </image>
@@ -295,6 +295,12 @@
       <TextField fx:id="idEvM" layoutX="480.0" layoutY="207.0" prefHeight="26.0" prefWidth="51.0" />
       <DatePicker fx:id="DateDEv" layoutX="552.0" layoutY="75.0" />
       <DatePicker fx:id="DateFEv" layoutX="556.0" layoutY="121.0" />
-      <Button fx:id="Planning" layoutX="571.0" layoutY="295.0" mnemonicParsing="false" onAction="#btnPlanning" text="Planning" />
+      <ImageView fx:id="Back" fitHeight="30.0" fitWidth="50.0" layoutX="267.0" layoutY="170.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleBackArrowImageClickE" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fleche-droite%20(1).png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="Recherche" layoutX="510.0" layoutY="27.0" onKeyPressed="#Recherche" promptText="Recherche" />
+      <Button fx:id="triNom" blendMode="COLOR_BURN" layoutX="544.0" layoutY="298.0" mnemonicParsing="false" onAction="#triNom" prefHeight="26.0" prefWidth="118.0" text="TrieParNom" />
    </children>
 </AnchorPane>

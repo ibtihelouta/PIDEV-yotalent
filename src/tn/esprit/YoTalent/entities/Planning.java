@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package tn.esprit.YoTalent.entities;
+import java.time.LocalDate;
 import tn.esprit.YoTalent.entities.Evenement;
 import java.util.List;
 import java.util.Objects;

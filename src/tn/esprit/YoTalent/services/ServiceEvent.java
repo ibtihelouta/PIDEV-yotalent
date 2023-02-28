@@ -96,7 +96,7 @@ public class ServiceEvent
     
     
     
-   public void deletOne(int idEv)  {
+  public void deletOne(int idEv)  {
         String req = "delete from `evenement` where idEv=?";
         try {
            PreparedStatement pst =cnx.prepareStatement(req);
@@ -192,8 +192,42 @@ public class ServiceEvent
         return event;
     }
     
+   public ObservableList<Evenement> searchByEvenement(String nomEv ) throws SQLException{
+        String qry="SELECT * FROM evenement where nomEv LIKE '%"+nomEv+"%'" ;
+                  System.out.println(qry);
+            cnx = MaConnexion.getInstance().getCnx();
+            Statement stm = cnx.createStatement();
+            ResultSet rs = stm.executeQuery(qry);
+        ObservableList<Evenement>  list = FXCollections.observableArrayList()  ; 
+        while(rs.next()){
+        Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation")); 
+        list.add(a) ;
+        
+        }
+         
+
+        return list ;
+    } 
     
-    
-    
+    public ObservableList<Evenement> getAllTriNom() {
+        ObservableList<Evenement> list = FXCollections.observableArrayList();
+        try {
+         //   String req = "Select * from espacetalent where roles like '%[]%' order by nom";
+                String req = "Select * from evenement  order by nomEv";
+            Statement st = cnx.createStatement();
+            ResultSet rs = st.executeQuery(req);
+
+            while (rs.next()) {
+            //    EspaceTalent u = new EspaceTalent(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("username"), rs.getString("email"), rs.getString("file"), rs.getInt("etat"), rs.getDate("created_at"));
+               Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation")); 
+        list.add(a) ;
+        
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return list;
+    }
     
 }
