@@ -88,7 +88,24 @@ public class ServicePlanning  {
         }
         return p;
     }
+  public List<Planning> searchByevent(int id ) throws SQLException{
+        String qry="SELECT * FROM planning where idEv="+id+"" ;
+                  System.out.println(qry);
+            cnx = MaConnexion.getInstance().getCnx();
+            Statement stm = cnx.createStatement();
+            
+            ResultSet rs = stm.executeQuery(qry);
+         
+        List<Planning>  list = new ArrayList<>();
+        while(rs.next()){
+        Planning a = new Planning(rs.getString("hour"),rs.getString("nomActivite"),rs.getString("datePL")); 
+        list.add(a) ;
+        
+        }
+         
 
+        return list ;
+    } 
     
     
     public void updateOne(Planning planning,int id) throws SQLException {

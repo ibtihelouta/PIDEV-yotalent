@@ -3,18 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/utils/MaConnexion.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/services/ServicePlanning.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/entities/Planning.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/GUI/interfaceplanning.css</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/tests/YYotalent.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/services/ServiceUser.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/services/ServicePartic.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/services/ServiceEvent.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceEventController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/GUI/InterfacePlanningController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/entities/Evenement.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/YYotalent/src/tn/esprit/YoTalent/tests/FXmain.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfacePlanningController.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/AffichagePlanning.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/entities/Planning.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfacehomeController.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/services/ServicePlanning.java</file>
+            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/tests/FXmain.java</file>
         </group>
     </open-files>
 </project-private>

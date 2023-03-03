@@ -37,8 +37,8 @@ public class YYotalent {
 
       //  Categorie p = new Categorie(50, "Fakhreddine");
         
-      Evenement pt = new Evenement( "mostfaa ","12 fevrier 2001","14 mars 2001","mAAoo");
-         Evenement pt1 = new Evenement( 63,"ibtihel","3 mars 2003","7 mai 2003","hhhje");
+      Evenement pt = new Evenement( 71,"anis ","12 fevrier 2001","14 mars 2001","mAAoo","iaaaaaaaaaaa");
+         Evenement pt1 = new Evenement( "ibtihel","3 mars 2003","7 mai 2003","hhhje");
           Planning p1 = new Planning("2h", "maloukti ", " 14 mars  2001",67);
                    Planning p2 = new Planning( "5H", "mostfa", " 15 mars  2001",66);
 
@@ -47,12 +47,12 @@ public class YYotalent {
         ServicePlanning pv = new ServicePlanning();
 
         try {
-            // sv.createOne(pt);
+            //sv.createOne(pt);
               //sv.createOne(pt1);
-              // sv.updateOne(pt);
-               //sv.deletOne(78);
+              //sv.updateOne(pt);
+             // sv.deletOne(71);
              //  pv.createOne(p2);
-          pv.updateOne(p2,19);
+         // pv.updateOne(p2,19);
              // pv.deletOne( 15);
               System.out.println(sv.selectAll());
              System.out.println(sv.SelectOneEvent(65));

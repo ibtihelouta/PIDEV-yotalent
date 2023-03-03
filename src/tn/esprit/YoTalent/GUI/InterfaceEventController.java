@@ -5,14 +5,19 @@
  */
 package tn.esprit.YoTalent.GUI;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -43,6 +48,7 @@ import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.services.ServiceEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import tn.esprit.YoTalent.utils.MaConnexion;
@@ -92,8 +98,6 @@ public class InterfaceEventController implements Initializable {
 
     @FXML
     private TextField idED;
-    @FXML
-    private TextField idEvM;
 
     @FXML
     private Button DeleteEv;
@@ -115,6 +119,8 @@ public class InterfaceEventController implements Initializable {
   ;
     @FXML
     private TextField Recherche;
+    public static Evenement currentevent;
+    private int i;
 
     public InterfaceEventController(){
         cnx = MaConnexion.getInstance().getCnx();
@@ -225,9 +231,13 @@ public class InterfaceEventController implements Initializable {
          Date DateDebut = Date.valueOf(this.DateDEv.getValue());
          Date DateFin = Date.valueOf(this.DateFEv.getValue());
         
-         
-        
-             Evenement up=new Evenement(Integer.valueOf(this.idEvM.getText()),this.NomEv.getText(),String.valueOf(DateDebut),String.valueOf(DateFin),this.Localisation.getText());
+          FileChooser fileChooser = new FileChooser();
+                File selectedFile = fileChooser.showOpenDialog(null);
+                String imagePath = selectedFile.getAbsolutePath();
+                System.out.println(Integer.toString(i));
+                
+             Evenement up=new Evenement(i,this.NomEv.getText(),this.Localisation.getText(),String.valueOf(DateDebut),String.valueOf(DateFin),imagePath);
+            // (int idEv, String nomEv, String localisation, String dateDEv, String dateFEv, String image) 
          es.updateOne(up);
             
             getEvents();
@@ -312,7 +322,7 @@ public class InterfaceEventController implements Initializable {
     }
 
     @FXML
-    private void btnAddEv(ActionEvent event) throws SQLException {
+    private void btnAddEv(ActionEvent event) throws SQLException, IOException {
         String nomEv,LocalisationE;
         //BeginsAtdate.setValue(LocalDate.now());
          if ((NomEv.getText().length()==0)||(Localisation.getText().length()==0))
@@ -364,8 +374,16 @@ public class InterfaceEventController implements Initializable {
 
             return;
         } 
-            Evenement ev=new Evenement(NomEv.getText(),String.valueOf(DateDEv.getValue()),String.valueOf(DateFEv.getValue()),Localisation.getText());
-         es.createOne(ev);
+           FileChooser fileChooser1 = new FileChooser();
+                File selectedFile1 = fileChooser1.showOpenDialog(null);
+                String imagePath = selectedFile1.getAbsolutePath();
+
+
+
+           
+            Evenement ev=new Evenement(NomEv.getText(),Localisation.getText(),String.valueOf(DateDEv.getValue()),String.valueOf(DateFEv.getValue()),imagePath);
+    
+            es.createOne(ev);
          getEvents();
           //FXMLLoader loader = new FXMLLoader(getClass().getResource("DisplayEvents.fxml"));
           Alert alert = new Alert(AlertType.INFORMATION);
@@ -388,9 +406,14 @@ public class InterfaceEventController implements Initializable {
         //idLabel.setText(String.valueOf(e.getId_event()));
        idED.setText(String.valueOf(e.getIdEv()));
         NomEv.setText(e.getNomEv());
+        currentevent=e;
          
-       //DateDEv.setValue((e.getDateDEv()));
-       
+       this.i=e.getIdEv();
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    LocalDate localDate = LocalDate.parse(e.getDateDEv());
+     LocalDate localDate1 = LocalDate.parse(e.getDateFEv());  
+       DateDEv.setValue(localDate);
+       DateFEv.setValue(localDate1);
        Localisation.setText(e.getLocalisation());
         
     }

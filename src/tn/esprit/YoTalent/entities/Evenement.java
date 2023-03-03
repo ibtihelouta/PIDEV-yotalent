@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Evenement {
       private int  idEv;
-    private String nomEv,localisation,dateDEv,dateFEv;
+    private String nomEv,localisation,dateDEv,dateFEv,image;
     
     
 
@@ -26,7 +26,35 @@ public class Evenement {
         this.dateDEv=dateDEv;
           this.dateFEv=dateFEv;
            this.localisation = localisation;
+                   
+
         
+    }
+
+    public Evenement(int idEv, String nomEv, String localisation, String dateDEv, String dateFEv, String image) {
+        this.idEv = idEv;
+        this.nomEv = nomEv;
+        this.localisation = localisation;
+        this.dateDEv = dateDEv;
+        this.dateFEv = dateFEv;
+        this.image = image;
+    }
+
+    public Evenement(String nomEv, String localisation, String dateDEv, String dateFEv, String image) {
+        this.nomEv = nomEv;
+        this.localisation = localisation;
+        this.dateDEv = dateDEv;
+        this.dateFEv = dateFEv;
+        this.image = image;
+    }
+    
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 public Evenement( String nomEv,String dateDEv, String dateFEv,String localisation) {
        
@@ -34,8 +62,12 @@ public Evenement( String nomEv,String dateDEv, String dateFEv,String localisatio
         this.dateDEv=dateDEv;
           this.dateFEv=dateFEv;
            this.localisation = localisation;
+                           
+
         
     }
+
+ 
     public int getIdEv() {
         return idEv;
     }
@@ -109,13 +141,20 @@ public Evenement( String nomEv,String dateDEv, String dateFEv,String localisatio
         if (!Objects.equals(this.dateFEv, other.dateFEv)) {
             return false;
         }
+        if (!Objects.equals(this.image, other.image)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Evenement{" + "idEv=" + idEv + ", nomEv=" + nomEv + ", localisation=" + localisation + ", dateDEv=" + dateDEv + ", dateFEv=" + dateFEv + '}';
+        return "Evenement{" + "idEv=" + idEv + ", nomEv=" + nomEv + ", localisation=" + localisation + ", dateDEv=" + dateDEv + ", dateFEv=" + dateFEv + ", image=" + image + '}';
     }
+
+   
+
+    
 
    
     

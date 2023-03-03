@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import static javax.swing.UIManager.getString;
 
 /**
  *
@@ -37,18 +38,41 @@ public class ServiceEvent
     }
 
     
-    public void createOne(Evenement evenement) throws SQLException {
+   /* public void createOne(Evenement evenement) throws SQLException {
         String dateDEv,dateFEv= DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDateTime.now());
-      String req =   "INSERT INTO `evenement`(`nomEv`, `dateDEv`, `dateFEv`, `localisation`) " + "VALUES ('"+evenement.getNomEv()+"','"+evenement.getDateDEv()+"','"+evenement.getDateFEv()+"','"+evenement.getLocalisation()+"')";
+      String req =   "INSERT INTO `evenement`(`nomEv`, `dateDEv`, `dateFEv`, `localisation`,`ImageEv`) " + "VALUES ('"+evenement.getNomEv()+"','"+evenement.getDateDEv()+"','"+evenement.getDateFEv()+"','"+evenement.getLocalisation()+"','"+evenement.getImage()+"')";
         Statement st = cnx.createStatement();
         st.executeUpdate(req);
         System.out.println("Event ajouté !");
+        
+    }*/
+    public void createOne(Evenement evenement) throws SQLException {
+        
+    //String dateFEv = DateTimeFormatter.ofPattern("yyyy/MM/dd").format(LocalDateTime.now());
+      
+    String req = "INSERT INTO evenement (nomEv, dateDEv, dateFEv, localisation, ImageEv) VALUES (?, ?, ?, ?, ?)";
+       
+    PreparedStatement pst = cnx.prepareStatement(req);
+    pst.setString(1, evenement.getNomEv());
+    pst.setString(2, evenement.getDateDEv());
+    pst.setString(3, evenement.getDateFEv());
+    pst.setString(4, evenement.getLocalisation());
+    pst.setString(5, evenement.getImage());
+    
+    int rowsInserted = pst.executeUpdate();
+    
+    if (rowsInserted > 0) {
+        System.out.println("Event " + evenement.getNomEv() + " has been created successfully.");
+    } else {
+        System.out.println("Failed to create event " + evenement.getNomEv() + ".");
     }
+}
+
 
   
     public void updateOne(Evenement evenement) throws SQLException {
         
-        String req =  "UPDATE `evenement` SET nomEv=?,dateDEv=?,dateFEv=?,localisation=? WHERE idEv=?";
+        String req =  "UPDATE `evenement` SET nomEv=?,dateDEv=?,dateFEv=?,localisation=?,ImageEv=? WHERE idEv=?";
        
             PreparedStatement pst =cnx.prepareStatement(req);
 
@@ -56,8 +80,8 @@ public class ServiceEvent
             pst.setString(2, evenement.getDateDEv());
              pst.setString(3, evenement.getDateFEv());
               pst.setString(4, evenement.getLocalisation());
-           
-            pst.setInt(5, evenement.getIdEv());
+           pst.setString(5, evenement.getImage());
+            pst.setInt(6, evenement.getIdEv());
             pst.executeUpdate();
             System.out.println("participants number of event " + evenement.getNomEv() + " is updated successfully");
 
@@ -113,26 +137,32 @@ public class ServiceEvent
     
    public List<Evenement> selectAll() throws SQLException {
           List<Evenement> temp = new ArrayList<>();
-
-        String req = "SELECT * FROM `Evenement`";
+try {
+     String req = "SELECT * FROM `Evenement`";
         PreparedStatement ps = cnx.prepareStatement(req);
 
         ResultSet rs = ps.executeQuery();
 
         while (rs.next()){
 
-            Evenement Cat = new Evenement();
+            Evenement Cat = new Evenement(rs.getInt(1), rs.getString("nomEv"), rs.getString("localisation"),rs.getString("dateDEv") , rs.getString(4), rs.getString("ImageEv"));
 
-            Cat.setIdEv(rs.getInt(1));
+            /*  Cat.setIdEv(rs.getInt(1));
             Cat.setNomEv(rs.getString("nomEv"));
             Cat.setDateDEv(rs.getString("dateDEv"));
             Cat.setDateFEv(rs.getString(4));
              Cat.setLocalisation(rs.getString("localisation"));
+           Cat.setLocalisation(rs.getString("ImageEv"));*/
            
 
             temp.add(Cat);
 
         }
+
+}catch(SQLException ex){
+    System.out.println(ex.getMessage());
+}
+       
 
 
         return temp;
@@ -153,7 +183,8 @@ public class ServiceEvent
             Cat.setNomEv(rs.getString("nomEv"));
             Cat.setDateDEv(rs.getString("dateDEv"));
             Cat.setDateFEv(rs.getString(4));
-             Cat.setLocalisation(rs.getString("localisation"));
+             Cat.setImage(rs.getString("ImageEv"));
+               Cat.setLocalisation(rs.getString("localisation"));
            
 
             events.add(Cat);
@@ -181,7 +212,7 @@ public class ServiceEvent
             
             while(rs.next()){           
                  
-                event = new Evenement(rs.getInt("idEv"), rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation"));
+                event = new Evenement(rs.getInt("idEv"), rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation"),rs.getString("ImageEv"));
 
             }
             
@@ -200,7 +231,7 @@ public class ServiceEvent
             ResultSet rs = stm.executeQuery(qry);
         ObservableList<Evenement>  list = FXCollections.observableArrayList()  ; 
         while(rs.next()){
-        Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation")); 
+        Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation"),rs.getString("ImageEv")); 
         list.add(a) ;
         
         }
@@ -219,7 +250,7 @@ public class ServiceEvent
 
             while (rs.next()) {
             //    EspaceTalent u = new EspaceTalent(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("username"), rs.getString("email"), rs.getString("file"), rs.getInt("etat"), rs.getDate("created_at"));
-               Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation")); 
+               Evenement a = new Evenement( rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation"),rs.getString("ImageEv")); 
         list.add(a) ;
         
             }
