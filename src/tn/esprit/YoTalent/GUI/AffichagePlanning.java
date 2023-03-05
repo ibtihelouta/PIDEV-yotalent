@@ -21,6 +21,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -49,13 +50,15 @@ private int row = 0;
     private int col = 0;
     @FXML
     private ImageView BackPA;
+    @FXML
+    private Label adresse;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        adresse.setText(InterfacehomeController.currentevent.getLocalisation());
         gridPane= new GridPane();
         gridPane.setHgap(20);
         gridPane.setVgap(20);
@@ -136,7 +139,7 @@ node.setStyle("-fx-background-color:#ffd53d");
     @FXML
     private void handleBackArrowImageClickPA(MouseEvent event) throws IOException {
         
-         Parent previousScene = FXMLLoader.load(getClass().getResource("home.fxml"));
+         Parent previousScene = FXMLLoader.load(getClass().getResource("AffichageEvent.fxml"));
     Scene scene = new Scene(previousScene);
     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
     stage.setScene(scene);

@@ -121,6 +121,8 @@ public class InterfaceEventController implements Initializable {
     private TextField Recherche;
     public static Evenement currentevent;
     private int i;
+    @FXML
+    private Button map;
 
     public InterfaceEventController(){
         cnx = MaConnexion.getInstance().getCnx();
@@ -143,6 +145,9 @@ public class InterfaceEventController implements Initializable {
         
         
     } 
+    public void setlocal(String ad){
+        this.Localisation.setText(ad);
+    }
     public void getEvents() throws SQLException {
      
       
@@ -173,7 +178,7 @@ public class InterfaceEventController implements Initializable {
                     
                     alert.showAndWait();}
          
-          if ((NomEv.getText().length() > 20)||(Localisation.getText().length()>20) ) {
+          if (NomEv.getText().length() > 20 ) {
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Error");
         alert.setHeaderText("Invalid input");
@@ -333,7 +338,7 @@ public class InterfaceEventController implements Initializable {
                     
                     alert.showAndWait();}
          
-         if ((NomEv.getText().length() > 20)||(Localisation.getText().length()>20) ) {
+         if (NomEv.getText().length() > 20 ) {
         Alert alert = new Alert(AlertType.ERROR);
         alert.setTitle("Error");
         alert.setHeaderText("Invalid input");
@@ -399,7 +404,7 @@ public class InterfaceEventController implements Initializable {
 
     @FXML
    
-      private void choisirEvent(MouseEvent event) {
+      private void choisirEvent(MouseEvent event) throws IOException {
         
         Evenement e = AfficherEv.getItems().get(AfficherEv.getSelectionModel().getSelectedIndex());
         
@@ -407,7 +412,7 @@ public class InterfaceEventController implements Initializable {
        idED.setText(String.valueOf(e.getIdEv()));
         NomEv.setText(e.getNomEv());
         currentevent=e;
-         
+  
        this.i=e.getIdEv();
        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
     LocalDate localDate = LocalDate.parse(e.getDateDEv());
@@ -455,6 +460,15 @@ ServiceEvent sp = new ServiceEvent();
      colLocalisation.setCellValueFactory(new PropertyValueFactory<Evenement,String>("localisation"));
         events=es.getAllTriNom();
              AfficherEv.setItems(events);
+    }
+
+    @FXML
+    private void map(ActionEvent event) throws IOException {
+         Parent previousScene = FXMLLoader.load(getClass().getResource("Map.fxml"));
+    Scene scene = new Scene(previousScene);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    stage.setScene(scene);
+    stage.show();
     }
         
     }

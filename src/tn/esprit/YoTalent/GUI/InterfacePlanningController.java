@@ -483,7 +483,7 @@ ServicePlanning sp = new ServicePlanning();
         try {
             PdfWriter.getInstance(document, new FileOutputStream(String.valueOf(DateLyoum + ".pdf")));//yyyy-MM-dd
             document.open();
-            Paragraph ph1 = new Paragraph("Rapport Pour les reservations :" + DateRapport);
+            Paragraph ph1 = new Paragraph("Rapport Pour les plannings :" + DateRapport);
             Paragraph ph2 = new Paragraph(".");
             PdfPTable table = new PdfPTable(3);
 
@@ -491,10 +491,9 @@ ServicePlanning sp = new ServicePlanning();
             PdfPCell cell;
 
             //contenu du tableau.
-            table.addCell("ID RESERVATION");
-            table.addCell("ID UTILISATEUR");
-            table.addCell("MOYEN TRANSPORT");
-            table.addCell("DISPONIBILITE");
+            table.addCell("HEURE");
+            table.addCell("NOM ACTIVITE");
+            table.addCell("DATE");
             Planning r = new Planning();
             sp.FetchPlanning().forEach(e-> {
                 //  table.setHorizontalAlignment(Element.ALIGN_CENTER);

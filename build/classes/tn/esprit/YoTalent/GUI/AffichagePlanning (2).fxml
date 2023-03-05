@@ -188,5 +188,10 @@
             <Font name="Bodoni MT" size="40.0" />
          </font>
       </Label>
+      <Label fx:id="adresse" layoutX="415.0" layoutY="170.0" text="Label">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

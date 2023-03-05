@@ -109,7 +109,8 @@ public class ServiceEvent
     public void supprimerEvent(Evenement e)throws SQLException{
     
     String req = "delete from evenement where idEv = ?";
-    
+        ServicePlanning sp = new ServicePlanning();
+        sp.deletall(e.getIdEv());
         PreparedStatement ps = cnx.prepareStatement(req);
         ps.setInt(1, e.getIdEv());
         ps.executeUpdate();

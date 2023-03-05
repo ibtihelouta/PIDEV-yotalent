@@ -87,6 +87,7 @@ node.setStyle("-fx-background-color:#ffd53d");
                 node.setOnMouseClicked(event -> {
                     // Action à effectuer lorsqu'un MyPane est cliqué
                  this.id=e.getIdEv();
+                 currentevent=e;
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("AffichagePlanning (2).fxml"));
                     Parent root;
                     try {

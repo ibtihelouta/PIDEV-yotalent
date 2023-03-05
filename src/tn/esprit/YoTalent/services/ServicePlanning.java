@@ -51,7 +51,7 @@ public class ServicePlanning  {
         
             Evenement tempEvent = es.SelectOneEvent(planning.getIdEv());
             System.out.println("before"+tempEvent);
-            es.updateOne(tempEvent);
+            //es.updateOne(tempEvent);
             int new_id=tempEvent.getIdEv();
             planning.setEvenement(tempEvent);
             System.out.println("after"+tempEvent);
@@ -149,6 +149,27 @@ public class ServicePlanning  {
             es.updateOne(tempEvent);
             
          System.out.println("after"+tempEvent);
+          PreparedStatement   pst = cnx.prepareStatement(requete); 
+          pst.executeUpdate();
+            System.out.println("planning with idP="+idP+" is deleted successfully");
+        
+        
+       }catch (SQLException ex) {
+            System.out.println("error in delete planning " + ex.getMessage());
+        }
+        
+             
+        
+    }
+        
+    public void deletall( int idP) {
+       
+      
+        
+        String requete = "DELETE FROM `planning` WHERE idEv="+idP;
+        
+       try {
+            
           PreparedStatement   pst = cnx.prepareStatement(requete); 
           pst.executeUpdate();
             System.out.println("planning with idP="+idP+" is deleted successfully");

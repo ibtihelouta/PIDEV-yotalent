@@ -281,5 +281,6 @@
       <Button fx:id="ModifyEv" layoutX="687.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnModifyEv" prefHeight="31.0" prefWidth="93.0" text="Modify" textFill="#312a94" />
       <Button fx:id="DeleteEv" layoutX="687.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnDeleteEv" prefHeight="31.0" prefWidth="93.0" text="Delete" textFill="#312a94" />
       <Button fx:id="triNom" layoutX="653.0" layoutY="36.0" mnemonicParsing="false" onAction="#triNom" prefHeight="31.0" prefWidth="103.0" text="TrieParNom" textFill="#312a94" />
+      <Button fx:id="map" layoutX="527.0" layoutY="199.0" mnemonicParsing="false" onAction="#map" text="localisation" />
    </children>
 </AnchorPane>
