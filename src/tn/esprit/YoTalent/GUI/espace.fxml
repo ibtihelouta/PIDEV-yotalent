@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="349.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.EspaceController">
+   <children>
+      <ImageView fitHeight="697.0" fitWidth="1003.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="nbticket" layoutX="848.0" layoutY="71.0" prefHeight="31.0" prefWidth="83.0" />
+      <ImageView fx:id="imagEv" fitHeight="191.0" fitWidth="193.0" layoutX="384.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="prixtotal" layoutX="848.0" layoutY="131.0" prefHeight="31.0" prefWidth="83.0" textFill="#bc0c0c" />
+      <TextField fx:id="idticket" layoutX="733.0" layoutY="343.0" />
+      <Label fx:id="localisation" layoutX="408.0" layoutY="328.0" text="localisation" textFill="#5f1163">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomEv" layoutX="408.0" layoutY="208.0" prefHeight="31.0" prefWidth="148.0" text="name event" textFill="#5f1163">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateDEv" layoutX="408.0" layoutY="267.0" prefHeight="31.0" prefWidth="110.0" text="dateDEv" textFill="#5f1163">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="676.0" layoutY="60.0" prefHeight="53.0" prefWidth="157.0" text="nombre ticket" textFill="#5f1163">
+         <font>
+            <Font name="Bodoni MT" size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="payer" blendMode="COLOR_BURN" layoutX="676.0" layoutY="120.0" mnemonicParsing="false" onAction="#payer" prefHeight="53.0" prefWidth="131.0" text="Payer" textFill="#330736">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="valider" blendMode="COLOR_BURN" layoutX="610.0" layoutY="380.0" mnemonicParsing="false" onAction="#valider" prefHeight="23.0" prefWidth="117.0" text="Valider" textFill="#330736">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="rem" blendMode="COLOR_BURN" layoutX="733.0" layoutY="408.0" mnemonicParsing="false" onAction="#rembourser" prefHeight="53.0" prefWidth="222.0" text="demande refund" textFill="#330736">
+         <font>
+            <Font name="Bodoni MT" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
