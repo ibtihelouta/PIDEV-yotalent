@@ -7,7 +7,9 @@ package tn.esprit.YoTalent.GUI;
 
 
 import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Element;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
@@ -64,8 +66,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Border;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import static javafx.util.Duration.millis;
 import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.entities.Planning;
 import tn.esprit.YoTalent.services.ServicePlanning;
@@ -472,15 +476,22 @@ ServicePlanning sp = new ServicePlanning();
     void btnGenPDF(ActionEvent event) throws DocumentException, FileNotFoundException, IOException {
 ServicePlanning sp = new ServicePlanning();
 
-        long millis = System.currentTimeMillis();
+  long millis = System.currentTimeMillis();
         java.sql.Date DateRapport = new java.sql.Date(millis);
 
         String DateLyoum = new SimpleDateFormat("yyyyMMddHHmmss", Locale.ENGLISH).format(DateRapport);//yyyyMMddHHmmss
         System.out.println("Date d'aujourdhui : " + DateLyoum);
 
         com.itextpdf.text.Document document = new com.itextpdf.text.Document();
+        
+        
 
         try {
+              com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\Users\\ASUS\\Downloads\\sarra+ ibtihel\\sarra+ ibtihel\\Y\\YYotalent\\src\\tn\\esprit\\YoTalent\\GUI\\images\\a.png");
+               img.scaleAbsoluteWidth(200);
+               img.scaleAbsoluteHeight(50);
+               img.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
+              
             PdfWriter.getInstance(document, new FileOutputStream(String.valueOf(DateLyoum + ".pdf")));//yyyy-MM-dd
             document.open();
             Paragraph ph1 = new Paragraph("Rapport Pour les plannings :" + DateRapport);
@@ -503,6 +514,7 @@ ServicePlanning sp = new ServicePlanning();
                 
             }
             );
+            document.add(img);
             document.add(ph1);
             document.add(ph2);
             document.add(table);
@@ -520,7 +532,108 @@ ServicePlanning sp = new ServicePlanning();
         {
             desktop.open(file); //opens the specified file   
         }
-    }
+
+/* MaConnexion cnx = MaConnexion.getInstance();
+
+        PreparedStatement pst=null;
+        ResultSet rs=null;
+        String guery = " select * from planning";
+        try {   
+
+        pst= cnx.getCnx().prepareStatement(guery);
+        rs= pst.executeQuery();
+
+        String file_name = "planning.pdf";
+        Document doc = new Document();
+        PdfWriter.getInstance(doc, new FileOutputStream(file_name));
+
+        doc.open();
+
+        com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\Users\\ASUS\\Downloads\\sarra+ ibtihel\\sarra+ ibtihel\\Y\\YYotalent\\src\\tn\\esprit\\YoTalent\\GUI\\images\\a.png");
+        img.scaleAbsoluteWidth(200);
+        img.scaleAbsoluteHeight(50);
+        img.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);
+        doc.add(img);
+
+        doc.add(new Paragraph(" "));
+        doc.add(new Paragraph("planning list",com.itextpdf.text.FontFactory.getFont(com.itextpdf.text.FontFactory.TIMES_BOLD,20,BaseColor.BLUE)));
+        doc.add(new Paragraph(" "));
+
+        PdfPTable table = new PdfPTable(3);
+        table.setWidthPercentage(100);
+        PdfPCell cell;
+        cell = new PdfPCell (new Phrase("hour", com.itextpdf.text.FontFactory.getFont("Comic Sans MS",12)));
+       // cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+
+        cell = new PdfPCell (new Phrase("nomActivite", com.itextpdf.text.FontFactory.getFont("Comic Sans MS",12)));
+       // cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+
+        cell = new PdfPCell (new Phrase("datePL", com.itextpdf.text.FontFactory.getFont("Comic Sans MS",12)));
+        //cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        cell.setBackgroundColor(BaseColor.GRAY);
+        table.addCell(cell);
+
+        
+        /////////////////////////////////////////////////////////////////////////////////
+        while(rs.next()) {
+        cell = new PdfPCell (new Phrase(rs.getString("Hour").toString(), com.itextpdf.text.FontFactory.getFont("Arial",12)));
+        //cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell);
+
+        cell = new PdfPCell (new Phrase(rs.getString("NomActivite").toString(), com.itextpdf.text.FontFactory.getFont("Arial",12)));
+        //cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell);
+
+        cell = new PdfPCell (new Phrase(rs.getString("DatePL").toString(), com.itextpdf.text.FontFactory.getFont("Arial",12)));
+        //cell.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.addCell(cell); }
+
+        doc.add(table);
+
+        System.out.println("done");
+        doc.close();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(InterfacePlanningController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DocumentException ex) {
+            Logger.getLogger(InterfacePlanningController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(InterfacePlanningController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfacePlanningController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Formation details exported to PDF Sheet");
+            alert.show();
+long millis = System.currentTimeMillis();
+java.sql.Date DateRapport = new java.sql.Date(millis);
+
+        String DateLyoum = new SimpleDateFormat("yyyyMMddHHmmss", Locale.ENGLISH).format(DateRapport);//yyyyMMddHHmmss
+        System.out.println("Date d'aujourdhui : " + DateLyoum);
+
+ File file = new File(DateLyoum + ".pdf");
+        Desktop desktop = Desktop.getDesktop();
+        if (file.exists()) //checks file exists or not  
+        {
+            desktop.open(file); //opens the specified file   
+        }
+
+
+
+    }*/
+
+
+
+
+
+ 
+
+
     }
 
 
@@ -535,9 +648,7 @@ ServicePlanning sp = new ServicePlanning();
  
         
         
-    
-
-    
+}
         
         
         

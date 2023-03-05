@@ -27,7 +27,7 @@ public class FXmain extends Application {
     
   @Override
     public void start(Stage primaryStage) throws IOException {
-               Parent root = FXMLLoader.load(getClass().getResource("../GUI/IntarfaceEvent.fxml"));
+               Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceEvent.fxml"));
         Scene scene = new Scene(root); 
         primaryStage.setTitle("Gérer Evenements");
         primaryStage.setScene(scene);

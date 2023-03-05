@@ -123,6 +123,8 @@ public class InterfaceEventController implements Initializable {
     private int i;
     @FXML
     private Button map;
+    @FXML
+    private Button MangT;
 
     public InterfaceEventController(){
         cnx = MaConnexion.getInstance().getCnx();
@@ -470,7 +472,27 @@ ServiceEvent sp = new ServiceEvent();
     stage.setScene(scene);
     stage.show();
     }
+
+    @FXML
+    private void btnMangT(ActionEvent event) {
         
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceTicket.fxml"));
+            Stage stage = (Stage) MangT.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfaceTicketController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+        
+    
+    
     }
         
     

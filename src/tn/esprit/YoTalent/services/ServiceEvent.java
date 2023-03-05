@@ -262,4 +262,29 @@ try {
         return list;
     }
     
+    
+    
+    
+    
+      public Evenement Selectid(String nom){
+    Evenement event = new Evenement();
+    String req = "SELECT * FROM evenement WHERE nomEv=?";
+    
+    try {
+        PreparedStatement ps = cnx.prepareStatement(req);
+        ps.setString(1, nom);
+        ResultSet rs = ps.executeQuery();
+        
+        while(rs.next()){
+            event = new Evenement(rs.getInt("idEv"), rs.getString("nomEv"), rs.getString("dateDEv"),rs.getString("dateFEv"),rs.getString("localisation"));
+        }
+        
+    } catch (SQLException ex) {
+        Logger.getLogger(ServiceEvent.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    return event;
+}
+
+    
 }

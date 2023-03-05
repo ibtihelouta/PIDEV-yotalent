@@ -156,7 +156,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button blendMode="COLOR_BURN" layoutX="66.0" layoutY="357.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
+      <Button fx:id="MangT" blendMode="COLOR_BURN" layoutX="66.0" layoutY="357.0" mnemonicParsing="false" onAction="#btnMangT" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -179,7 +179,7 @@
       </Button>
       <ImageView fitHeight="80.0" fitWidth="93.0" layoutX="120.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/325376049_3425244091127302_160168539439135435_n.png" />
+            <Image url="@images/a.png" />
          </image>
       </ImageView>
       <Button blendMode="COLOR_BURN" layoutX="94.0" layoutY="404.0" mnemonicParsing="false" text="Exit">

@@ -124,12 +124,7 @@
          </image>
       </ImageView>
       <Circle fill="DODGERBLUE" layoutX="1004.0" layoutY="55.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button layoutX="951.0" layoutY="121.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="118.0" text="Participer" textFill="#312a94">
-         <effect>
-            <ColorAdjust />
-         </effect>
-      </Button>
-      <Button layoutX="951.0" layoutY="162.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="118.0" text="A" textFill="#312a94">
+      <Button fx:id="Acheter" layoutX="951.0" layoutY="162.0" mnemonicParsing="false" onAction="#btnAcheter" prefHeight="19.0" prefWidth="118.0" text="Acheter Ticket" textFill="#312a94">
          <effect>
             <ColorAdjust />
          </effect>
