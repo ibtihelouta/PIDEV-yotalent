@@ -4,55 +4,102 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="349.0" prefWidth="622.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.EspaceController">
+<AnchorPane id="AnchorPane" prefHeight="614.0" prefWidth="1108.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.EspaceController">
    <children>
-      <ImageView fitHeight="697.0" fitWidth="1003.0" layoutX="-8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="647.0" fitWidth="1116.0" layoutX="-11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="nbticket" layoutX="848.0" layoutY="71.0" prefHeight="31.0" prefWidth="83.0" />
-      <ImageView fx:id="imagEv" fitHeight="191.0" fitWidth="193.0" layoutX="384.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="prixtotal" layoutX="848.0" layoutY="131.0" prefHeight="31.0" prefWidth="83.0" textFill="#bc0c0c" />
-      <TextField fx:id="idticket" layoutX="733.0" layoutY="343.0" />
-      <Label fx:id="localisation" layoutX="408.0" layoutY="328.0" text="localisation" textFill="#5f1163">
+      <ComboBox fx:id="nbticket" layoutX="890.0" layoutY="71.0" prefHeight="31.0" prefWidth="131.0" />
+      <ImageView fx:id="imagEv" fitHeight="191.0" fitWidth="193.0" layoutX="436.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="prixtotal" layoutX="894.0" layoutY="131.0" prefHeight="31.0" prefWidth="109.0" textFill="#bc0c0c" />
+      <TextField fx:id="idticket" layoutX="808.0" layoutY="372.0" />
+      <Label fx:id="localisation" layoutX="436.0" layoutY="330.0" text="Localisation" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="nomEv" layoutX="408.0" layoutY="208.0" prefHeight="31.0" prefWidth="148.0" text="name event" textFill="#5f1163">
+      <Label fx:id="nomEv" layoutX="436.0" layoutY="259.0" prefHeight="31.0" prefWidth="148.0" text="Name event" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label fx:id="dateDEv" layoutX="408.0" layoutY="267.0" prefHeight="31.0" prefWidth="110.0" text="dateDEv" textFill="#5f1163">
+      <Label fx:id="dateDEv" layoutX="436.0" layoutY="298.0" prefHeight="31.0" prefWidth="131.0" text="Date Event" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="676.0" layoutY="60.0" prefHeight="53.0" prefWidth="157.0" text="nombre ticket" textFill="#5f1163">
+      <Label layoutX="729.0" layoutY="60.0" prefHeight="53.0" prefWidth="157.0" text="Nombre ticket" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="payer" blendMode="COLOR_BURN" layoutX="676.0" layoutY="120.0" mnemonicParsing="false" onAction="#payer" prefHeight="53.0" prefWidth="131.0" text="Payer" textFill="#330736">
+      <ImageView fx:id="nextT" fitHeight="45.0" fitWidth="61.0" layoutX="424.0" layoutY="14.0" onMouseClicked="#handleBackArrowImageClickE" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="83.0" fitWidth="98.0" layoutX="131.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/a.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="95.0" layoutY="68.0" prefHeight="65.0" prefWidth="205.0" text="YoTalent" textOverrun="CENTER_ELLIPSIS">
          <font>
-            <Font name="Bodoni MT" size="15.0" />
+            <Font name="Bodoni MT" size="38.0" />
          </font>
-      </Button>
-      <Button fx:id="valider" blendMode="COLOR_BURN" layoutX="610.0" layoutY="380.0" mnemonicParsing="false" onAction="#valider" prefHeight="23.0" prefWidth="117.0" text="Valider" textFill="#330736">
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.4117647111415863" green="0.07450980693101883" red="0.4000000059604645" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="payer" layoutX="762.0" layoutY="131.0" mnemonicParsing="false" onAction="#payer" prefHeight="31.0" prefWidth="98.0" text="Payer" textFill="#312a94" />
+      <Button fx:id="rem" layoutX="805.0" layoutY="473.0" mnemonicParsing="false" onAction="#rembourser" prefHeight="31.0" prefWidth="193.0" text="Refund" textFill="#312a94" />
+      <Button fx:id="valider" layoutX="656.0" layoutY="433.0" mnemonicParsing="false" onAction="#valider" prefHeight="31.0" prefWidth="131.0" text="Save" textFill="#312a94" />
+      <Button fx:id="deconnecter" blendMode="COLOR_BURN" layoutX="147.0" layoutY="256.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="20.0" prefWidth="127.0" text="Log out">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.4117647111415863" red="0.07450980693101883" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
          <font>
-            <Font name="Bodoni MT" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="rem" blendMode="COLOR_BURN" layoutX="733.0" layoutY="408.0" mnemonicParsing="false" onAction="#rembourser" prefHeight="53.0" prefWidth="222.0" text="demande refund" textFill="#330736">
-         <font>
-            <Font name="Bodoni MT" size="15.0" />
+            <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
    </children>

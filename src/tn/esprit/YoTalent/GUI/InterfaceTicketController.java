@@ -60,8 +60,6 @@ public class InterfaceTicketController implements Initializable {
     @FXML
     private Button ModifyT;
     @FXML
-    private TextField delete;
-    @FXML
     private Button DeleteT;
     @FXML
     private Button AddT;
@@ -90,8 +88,6 @@ public class InterfaceTicketController implements Initializable {
     ObservableList<Ticket> tickets ;
       private boolean isLightMode =true;
 
-      @FXML
-    private TextField IdT1; 
       
       private  int idt;
       public static Ticket currentt;
@@ -104,6 +100,10 @@ public class InterfaceTicketController implements Initializable {
     private ComboBox<String> TickeComb;
     @FXML
     private Button EventMa;
+    @FXML
+    private Button user;
+    @FXML
+    private Button Exit;
       
 
     
@@ -340,5 +340,42 @@ private void handleBackArrowImageClickT(MouseEvent event) throws IOException {
         }
         
         
+    }
+
+    @FXML
+    private void btnUser(ActionEvent event) {
+        
+        
+        
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/Admin.fxml"));
+            Stage stage = (Stage) user.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfaceTicketController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+
+    @FXML
+    private void Retour(ActionEvent event) throws IOException {
+        
+        
+        
+        
+                         Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow(); 
+                    stage.close();
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("LoginFXML.fxml")));       
+                    stage.setScene(scene);
+                    stage.setTitle("Login");
+                    
+                    stage.show();
+
     }
 }

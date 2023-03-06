@@ -30,7 +30,7 @@
             <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
          </image>
       </ImageView>
-      <Button blendMode="COLOR_BURN" layoutX="97.0" layoutY="150.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Accueil">
+      <Button fx:id="Accueil" blendMode="COLOR_BURN" layoutX="97.0" layoutY="150.0" mnemonicParsing="false" onAction="#btnAccueill" prefHeight="23.0" prefWidth="200.0" text="Accueil">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
@@ -52,27 +52,6 @@
          </textFill>
       </Button>
       <Button blendMode="COLOR_BURN" layoutX="96.0" layoutY="207.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Consulter Espace Talent">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="12.0" />
-         </font>
-         <textFill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="0.4117647111415863" red="0.07450980693101883" />
-                     </color>
-                  </Stop>
-               </stops>
-            </LinearGradient>
-         </textFill>
-      </Button>
-      <Button blendMode="COLOR_BURN" layoutX="96.0" layoutY="263.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Consulter Evenements">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
@@ -119,7 +98,7 @@
       </Label>
       <ImageView fitHeight="47.0" fitWidth="67.0" layoutX="162.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/325376049_3425244091127302_160168539439135435_n.png" />
+            <Image url="@images/a.png" />
          </image>
       </ImageView>
       <Label layoutX="585.0" layoutY="100.0" text="Les Evenements" textFill="#3068a9">
@@ -128,7 +107,7 @@
          </font>
       </Label>
       <Circle fill="DODGERBLUE" layoutX="1024.0" layoutY="51.0" radius="39.0" stroke="BLACK" strokeType="INSIDE" />
-      <Button blendMode="COLOR_BURN" layoutX="22.0" layoutY="522.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="127.0" text="déconnecter">
+      <Button fx:id="deconecter" blendMode="COLOR_BURN" layoutX="22.0" layoutY="522.0" mnemonicParsing="false" onAction="#deconecter" prefHeight="20.0" prefWidth="127.0" text="déconnecter">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>

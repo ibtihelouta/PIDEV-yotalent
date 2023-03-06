@@ -16,13 +16,13 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="452.0" prefWidth="803.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceTicketController">
+<AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="1003.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceTicketController">
     <stylesheets>
         <URL value="@../Documents/YYotalent%20(3)/YYotalent/src/tn/esprit/YoTalent/GUI/interfacetalent.css" />
     </stylesheets>
    <children>
       <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fitHeight="452.0" fitWidth="956.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="633.0" fitWidth="1057.0" layoutX="-21.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
          </image>
@@ -51,20 +51,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button blendMode="COLOR_BURN" layoutX="49.0" layoutY="89.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="User management">
+      <Button fx:id="user" blendMode="COLOR_BURN" layoutX="68.0" layoutY="127.0" mnemonicParsing="false" onAction="#btnUser" prefHeight="23.0" prefWidth="200.0" text="User management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="0.9607843160629272" green="0.7960784435272217" red="0.9529411792755127" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -72,41 +64,25 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button blendMode="COLOR_BURN" layoutX="49.0" layoutY="120.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Talent space management">
+      <Button blendMode="COLOR_BURN" layoutX="68.0" layoutY="166.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Talent space management">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7843137383460999" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#3c383c" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Button>
-      <Button blendMode="COLOR_BURN" layoutX="49.0" layoutY="151.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Voting management">
+      <Button blendMode="COLOR_BURN" layoutX="68.0" layoutY="197.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Voting management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="0.9607843160629272" green="0.7960784435272217" red="0.9529411792755127" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#323032" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -114,62 +90,38 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <Button blendMode="COLOR_BURN" layoutX="49.0" layoutY="179.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Contract management">
+      <Button blendMode="COLOR_BURN" layoutX="68.0" layoutY="230.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Contract management">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7843137383460999" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#3f3b40" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Button>
-      <Button fx:id="EventMa" blendMode="COLOR_BURN" layoutX="49.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnEventMa" prefHeight="26.0" prefWidth="200.0" text="Event management">
+      <Button fx:id="EventMa" blendMode="COLOR_BURN" layoutX="68.0" layoutY="271.0" mnemonicParsing="false" onAction="#btnEventMa" prefHeight="26.0" prefWidth="200.0" text="Event management">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#434043" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Button>
-      <Button blendMode="COLOR_BURN" layoutX="49.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
+      <Button blendMode="COLOR_BURN" layoutX="68.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#363536" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -177,118 +129,85 @@
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Button>
-      <ImageView fitHeight="51.0" fitWidth="81.0" layoutX="121.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="51.0" fitWidth="81.0" layoutX="132.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/325376049_3425244091127302_160168539439135435_n.png" />
+            <Image url="@images/a.png" />
          </image>
       </ImageView>
-      <Button blendMode="COLOR_BURN" layoutX="121.0" layoutY="273.0" mnemonicParsing="false" text="Exit">
+      <Button fx:id="Exit" blendMode="COLOR_BURN" layoutX="94.0" layoutY="354.0" mnemonicParsing="false" onAction="#Retour" text="Exit">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#2c2a2c" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Button>
-      <ImageView fitHeight="72.0" fitWidth="51.0" layoutX="722.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/user%20(1).png" />
-         </image>
-      </ImageView>
       <Label layoutX="258.0" layoutY="80.0" textFill="#f3cbf5">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="307.0" layoutY="151.0" prefHeight="30.0" prefWidth="191.0" text="Add Ticket :" textFill="#5f1163">
+      <Label layoutX="395.0" layoutY="166.0" prefHeight="30.0" prefWidth="191.0" text="Add Ticket :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="PrixT" layoutX="452.0" layoutY="105.0" prefHeight="31.0" prefWidth="132.0" />
-      <Label layoutX="308.0" layoutY="196.0" prefHeight="29.0" prefWidth="154.0" text="Modify Ticket :" textFill="#5f1163">
+      <TextField fx:id="PrixT" layoutX="688.0" layoutY="97.0" prefHeight="31.0" prefWidth="150.0" />
+      <Label layoutX="394.0" layoutY="209.0" prefHeight="29.0" prefWidth="154.0" text="Modify Ticket :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Button fx:id="ModifyT" blendMode="COLOR_BURN" layoutX="504.0" layoutY="195.0" mnemonicParsing="false" onAction="#btnModifyT" prefHeight="31.0" prefWidth="141.0" text="Modify" textFill="#330736" />
-      <Label layoutX="306.0" layoutY="282.0" text="Display Ticket :" textFill="#5f1163">
+      <Label layoutX="463.0" layoutY="336.0" prefHeight="29.0" prefWidth="191.0" text="Display Ticket :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="304.0" layoutY="242.0" text="Delete Ticket :" textFill="#5f1163">
+      <Label layoutX="393.0" layoutY="255.0" text="Delete Ticket :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="delete" layoutX="481.0" layoutY="241.0" prefHeight="31.0" prefWidth="18.0" />
-      <Button fx:id="DeleteT" blendMode="COLOR_BURN" layoutX="518.0" layoutY="241.0" mnemonicParsing="false" onAction="#btDeleteT" prefHeight="31.0" prefWidth="141.0" text="      Delete" textFill="#330736" />
-      <ImageView fx:id="next" fitHeight="30.0" fitWidth="50.0" layoutX="308.0" layoutY="11.0" onMouseClicked="#handleArrowImageClickT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="next" fitHeight="97.0" fitWidth="47.0" layoutX="377.0" layoutY="14.0" onMouseClicked="#handleArrowImageClickT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
          </image>
       </ImageView>
-      <Button fx:id="AddT" blendMode="COLOR_BURN" layoutX="482.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnAddT" prefHeight="23.0" prefWidth="117.0" text="Add" textFill="#330736">
-         <font>
-            <Font name="Bodoni MT" size="15.0" />
-         </font></Button>
-      <ImageView fitHeight="23.0" fitWidth="18.0" layoutX="482.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/333187796_3528756500735719_332380235628600009_n.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="23.0" fitWidth="21.0" layoutX="531.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/332512906_589422769475610_5311193545973238400_n.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="527.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="26.0" fitWidth="30.0" layoutX="668.0" layoutY="339.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/interactive-display%20(2).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="518.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/332969124_913028666815342_3733742487404536392_n.png" />
-         </image>
-      </ImageView>
-      <TableView fx:id="Table" layoutX="332.0" layoutY="315.0" onMouseClicked="#choisirticket" prefHeight="123.0" prefWidth="408.0">
+      <TableView fx:id="Table" layoutX="459.0" layoutY="372.0" onMouseClicked="#choisirticket" prefHeight="123.0" prefWidth="486.0">
         <columns>
-            <TableColumn fx:id="Col2" minWidth="9.0" prefWidth="202.0" text="PrixT" />
-            <TableColumn fx:id="Col3" prefWidth="205.0" text="name Event" />
+            <TableColumn fx:id="Col2" minWidth="9.0" prefWidth="233.0" text="Price Ticket" />
+            <TableColumn fx:id="Col3" prefWidth="252.0" text="name Event" />
         </columns>
       </TableView>
-      <TextField fx:id="IdT1" layoutX="473.0" layoutY="195.0" prefHeight="31.0" prefWidth="15.0" />
-      <ImageView fx:id="back" fitHeight="30.0" fitWidth="50.0" layoutX="733.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleBackArrowImageClickT" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="back" fitHeight="47.0" fitWidth="47.0" layoutX="962.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#handleBackArrowImageClickT" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="TickeComb" layoutX="490.0" layoutY="53.0" prefWidth="150.0" />
-      <TextField fx:id="Recherche" layoutX="619.0" layoutY="116.0" onKeyPressed="#Recherche" prefHeight="31.0" prefWidth="154.0" promptText="Recherche" />
-      <Label layoutX="306.0" layoutY="101.0" prefHeight="30.0" prefWidth="150.0" text="Price Ticket :" textFill="#5f1163">
+      <ComboBox fx:id="TickeComb" layoutX="688.0" layoutY="53.0" prefWidth="150.0" />
+      <TextField fx:id="Recherche" layoutX="831.0" layoutY="243.0" onKeyPressed="#Recherche" prefHeight="31.0" prefWidth="154.0" promptText="Recherche" />
+      <Label layoutX="500.0" layoutY="97.0" prefHeight="30.0" prefWidth="150.0" text="Price Ticket :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="302.0" layoutY="54.0" prefHeight="30.0" prefWidth="200.0" text="Name Event:" textFill="#5f1163">
+      <Label layoutX="499.0" layoutY="54.0" prefHeight="30.0" prefWidth="200.0" text="Name Event:" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
+      <Button fx:id="AddT" layoutX="593.0" layoutY="166.0" mnemonicParsing="false" onAction="#btnAddT" prefHeight="31.0" prefWidth="150.0" text="Add" />
+      <Button fx:id="ModifyT" layoutX="593.0" layoutY="210.0" mnemonicParsing="false" onAction="#btnModifyT" prefHeight="31.0" prefWidth="150.0" text="Modify" />
+      <Button fx:id="DeleteT" layoutX="593.0" layoutY="259.0" mnemonicParsing="false" onAction="#btDeleteT" prefHeight="31.0" prefWidth="150.0" text="Delete" />
    </children>
 </AnchorPane>

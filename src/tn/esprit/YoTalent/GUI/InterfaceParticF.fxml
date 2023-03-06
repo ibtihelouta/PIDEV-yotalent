@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="684.0" prefWidth="1136.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceParticFController">
+   <children>
+      <ImageView fitHeight="687.0" fitWidth="1228.0">
+         <image>
+            <Image url="@333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="730.0" fitWidth="1240.0" layoutX="-12.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image></ImageView>
+      <ImageView fitHeight="102.0" fitWidth="146.0" layoutX="146.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="111.0" fitWidth="151.0" layoutX="140.0" layoutY="145.0">
+         <image>
+            <Image url="@images/a.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="140.0" layoutY="91.0" prefHeight="47.0" prefWidth="150.0" text="YoTalent">
+         <font>
+            <Font size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color blue="0.4117647111415863" red="0.07450980693101883" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="685.0" layoutY="35.0" prefHeight="71.0" prefWidth="342.0" text="Participation :" textFill="#3068a9">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="ListeVoteParIdU" layoutX="791.0" layoutY="493.0" mnemonicParsing="false" onAction="#GoToVoteList" prefHeight="53.0" prefWidth="146.0" text="Consult votes" textFill="#312a94" />
+      <Button fx:id="InterV" layoutX="541.0" layoutY="493.0" mnemonicParsing="false" onAction="#GoToVote" prefHeight="53.0" prefWidth="146.0" text="Vote" textFill="#312a94" />
+      <Button fx:id="afficherEV" layoutX="1027.0" layoutY="493.0" mnemonicParsing="false" onAction="#GoToEvent" prefHeight="53.0" prefWidth="146.0" text="Consult Events" textFill="#312a94" />
+      <ImageView fitHeight="232.0" fitWidth="191.0" layoutX="1012.0" layoutY="216.0">
+         <image>
+            <Image url="@images/334930052_1228515901386679_2019233097814702821_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="234.0" fitWidth="195.0" layoutX="778.0" layoutY="216.0">
+         <image>
+            <Image url="@images/294393495_762638531444023_3335374452196587462_n.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="233.0" fitWidth="207.0" layoutX="527.0" layoutY="218.0">
+         <image>
+            <Image url="@images/309404233_1461436940997612_1925401804670965211_n.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="deconnecter" blendMode="COLOR_BURN" layoutX="154.0" layoutY="324.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="34.0" prefWidth="168.0" text="Log out">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#045b197d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

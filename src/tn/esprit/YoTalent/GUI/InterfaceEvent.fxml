@@ -51,20 +51,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button blendMode="COLOR_BURN" layoutX="66.0" layoutY="148.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="User management">
+      <Button fx:id="User" blendMode="COLOR_BURN" layoutX="66.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnUser" prefHeight="23.0" prefWidth="200.0" text="User management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="0.9607843160629272" green="0.7960784435272217" red="0.9529411792755127" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#0d0d0d" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -79,16 +71,8 @@
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7843137383460999" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#353136" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -97,16 +81,8 @@
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="0.9607843160629272" green="0.7960784435272217" red="0.9529411792755127" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#322f32" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -121,16 +97,8 @@
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7843137383460999" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#322e32" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -142,16 +110,8 @@
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#3c393c" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -160,16 +120,8 @@
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#544e54" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
@@ -182,50 +134,37 @@
             <Image url="@images/a.png" />
          </image>
       </ImageView>
-      <Button blendMode="COLOR_BURN" layoutX="94.0" layoutY="404.0" mnemonicParsing="false" text="Exit">
+      <Button fx:id="Exit" blendMode="COLOR_BURN" layoutX="94.0" layoutY="404.0" mnemonicParsing="false" onAction="#Retour" text="Exit">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
-                  <Stop>
-                     <color>
-                        <Color />
-                     </color>
-                  </Stop>
-                  <Stop offset="1.0">
-                     <color>
-                        <Color blue="1.0" red="0.7833333611488342" />
-                     </color>
-                  </Stop>
+                  <Stop color="BLACK" />
+                  <Stop color="#3c383c" offset="1.0" />
                </stops>
             </LinearGradient>
          </textFill>
       </Button>
-      <ImageView fitHeight="72.0" fitWidth="51.0" layoutX="980.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@images/user%20(1).png" />
-         </image>
-      </ImageView>
       <Label fx:id="LocalisationError" layoutX="282.0" layoutY="170.0" textFill="#f3cbf5">
          <font>
             <Font name="Arial Rounded MT Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="394.0" layoutY="52.0" prefHeight="30.0" prefWidth="191.0" text="Add Event :">
+      <Label layoutX="394.0" layoutY="52.0" prefHeight="30.0" prefWidth="191.0" text="Add Event :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
       <TextField fx:id="NomEv" layoutX="457.0" layoutY="94.0" />
       <TextField fx:id="Localisation" layoutX="457.0" layoutY="144.0" />
-      <Label layoutX="417.0" layoutY="270.0" text="Modify Event :" textFill="#0d0d0d">
+      <Label layoutX="417.0" layoutY="270.0" text="Modify Event :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Label layoutX="457.0" layoutY="401.0" text="Display Event :" textFill="#1b1a1b">
+      <Label layoutX="457.0" layoutY="401.0" text="Display Event :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
@@ -238,7 +177,7 @@
             <TableColumn fx:id="colLocalisation" prefWidth="149.0" text=" Localisation" />
         </columns>
       </TableView>
-      <Label layoutX="420.0" layoutY="327.0" text="Delete Event :">
+      <Label layoutX="420.0" layoutY="327.0" text="Delete Event :" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
@@ -281,6 +220,6 @@
       <Button fx:id="ModifyEv" layoutX="687.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnModifyEv" prefHeight="31.0" prefWidth="93.0" text="Modify" textFill="#312a94" />
       <Button fx:id="DeleteEv" layoutX="687.0" layoutY="326.0" mnemonicParsing="false" onAction="#btnDeleteEv" prefHeight="31.0" prefWidth="93.0" text="Delete" textFill="#312a94" />
       <Button fx:id="triNom" layoutX="653.0" layoutY="36.0" mnemonicParsing="false" onAction="#triNom" prefHeight="31.0" prefWidth="103.0" text="TrieParNom" textFill="#312a94" />
-      <Button fx:id="map" layoutX="527.0" layoutY="199.0" mnemonicParsing="false" onAction="#map" text="localisation" />
+      <Button fx:id="map" layoutX="527.0" layoutY="199.0" mnemonicParsing="false" onAction="#map" text="localisation" textFill="#312a94" />
    </children>
 </AnchorPane>

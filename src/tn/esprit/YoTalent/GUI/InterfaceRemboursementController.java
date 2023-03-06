@@ -54,8 +54,6 @@ import tn.esprit.YoTalent.utils.MaConnexion;
  */
 public class InterfaceRemboursementController implements Initializable {
     @FXML
-    private Button ModifyR;
-    @FXML
     private TableColumn<Remboursement, Integer> col2;
     @FXML
     private TableColumn<Remboursement, Integer> col3;
@@ -66,14 +64,7 @@ public class InterfaceRemboursementController implements Initializable {
     @FXML
     private Button AddTr;
     @FXML
-    private DatePicker dateR;
-    @FXML
     private ImageView back;
-      @FXML
-    private TextField Recherche;
-      
-       @FXML
-    private TextField idRb;
     @FXML
     private TableView<Remboursement> TableR;
     ServiceRemboursement Tt=new ServiceRemboursement();
@@ -223,13 +214,6 @@ public class InterfaceRemboursementController implements Initializable {
     
     
 
-    @FXML
-    private void btnModifyR(ActionEvent event) {
-     
- 
-       
-           
-    }
 
     
 
@@ -309,7 +293,6 @@ public class InterfaceRemboursementController implements Initializable {
     }
     
     
-    @FXML
     private void Recherche(KeyEvent event) throws SQLException {
         ServiceRemboursement Tt=new ServiceRemboursement();
      Remboursement t = new Remboursement();

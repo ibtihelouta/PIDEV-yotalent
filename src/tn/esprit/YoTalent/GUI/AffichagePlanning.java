@@ -35,6 +35,7 @@ import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.entities.Planning;
 import tn.esprit.YoTalent.services.ServiceEvent;
 import tn.esprit.YoTalent.services.ServicePlanning;
+import tn.esprit.YoTalent.utils.UserSession;
 
 /**
  * FXML Controller class
@@ -56,6 +57,8 @@ private int row = 0;
     private Label adresse;
     @FXML
     private Button Acheter;
+    @FXML
+    private Button deconnecter;
     /**
      * Initializes the controller class.
      */
@@ -167,6 +170,26 @@ node.setStyle("-fx-background-color:#ffd53d");
         } catch (IOException ex) {
             Logger.getLogger(EspaceController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    @FXML
+    private void deconnecter(ActionEvent event) throws IOException {
+        
+        
+      UserSession userSession = UserSession.getInstace(null);
+                    userSession.cleanUserSession();
+                          
+                    Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow(); 
+                    stage.close();
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("LoginFXML.fxml")));       
+                    stage.setScene(scene);
+                    stage.setTitle("Login");
+                    
+                    stage.show();  
+        
+        
+        
     }
     
 }

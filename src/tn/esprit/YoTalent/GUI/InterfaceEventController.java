@@ -125,6 +125,10 @@ public class InterfaceEventController implements Initializable {
     private Button map;
     @FXML
     private Button MangT;
+    @FXML
+    private Button User;
+    @FXML
+    private Button Exit;
 
     public InterfaceEventController(){
         cnx = MaConnexion.getInstance().getCnx();
@@ -490,10 +494,47 @@ ServiceEvent sp = new ServiceEvent();
         
         
     }
+
+    @FXML
+    private void btnUser(ActionEvent event) {
+        
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/Admin.fxml"));
+            Stage stage = (Stage) User.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
+
+    @FXML
+    private void Retour(ActionEvent event) throws IOException {
+        
+        
+                         Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow(); 
+                    stage.close();
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("LoginFXML.fxml")));       
+                    stage.setScene(scene);
+                    stage.setTitle("Login");
+                    
+                    stage.show();
+
+
+    } 
+        
+        
+    }
         
     
     
-    }
+    
         
     
     

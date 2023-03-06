@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ import tn.esprit.YoTalent.services.ServiceEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -48,6 +50,10 @@ public class InterfacehomeController implements Initializable {
     @FXML
     private AnchorPane mybutton;
    public static int id;
+    @FXML
+    private Button Accueil;
+    @FXML
+    private Button deconecter;
     /**
      * Initializes the controller class.
      */
@@ -130,6 +136,39 @@ node.setStyle("-fx-background-color:#ffd53d");
     // Définir la HBox comme le contenu du ScrollPane
     scrollPane.setContent(hbox);
     }    
+
+    @FXML
+    private void btnAccueill(ActionEvent event) {
+        
+        
+        
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceParticF.fxml"));
+            Stage stage = (Stage) Accueil.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfaceParticFController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void deconecter(ActionEvent event) throws IOException {
+        
+        
+             Node node = (Node) event.getSource();
+                    Stage stage = (Stage) node.getScene().getWindow(); 
+                    stage.close();
+                    Scene scene = new Scene(FXMLLoader.load(getClass().getResource("LoginFXML.fxml")));       
+                    stage.setScene(scene);
+                    stage.setTitle("Login");
+                    
+                    stage.show();
+
+    }
     
    
    
