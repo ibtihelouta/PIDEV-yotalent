@@ -49,6 +49,8 @@ public class InterfaceCateg3LiteController implements Initializable {
     @FXML
     private Button deconnecter;
     @FXML
+    private Button retour ; 
+    @FXML
     private Label catg;
     @FXML
     private Button afficherET;
@@ -257,4 +259,22 @@ public class InterfaceCateg3LiteController implements Initializable {
             tray.showAndDismiss(Duration.millis(3000));
         
     }
+    
+       @FXML
+    private void retour(ActionEvent event) {
+        
+           try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceVotevF.fxml"));
+            Stage stage = (Stage) retour.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfacehomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
 }

@@ -85,11 +85,6 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="448.0" layoutY="4.0" pickOnBounds="true">
-         <image>
-            <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
-         </image>
-      </ImageView>
       <Label fx:id="catg" layoutX="685.0" layoutY="30.0" prefHeight="56.0" prefWidth="292.0" text="Dance :" textFill="#3068a9">
          <font>
             <Font size="49.0" />
@@ -165,6 +160,15 @@
          <effect>
             <Reflection />
          </effect>
+      </Button>
+      <Button fx:id="retour" layoutX="471.0" layoutY="631.0" mnemonicParsing="false" onAction="#retour">
+         <graphic>
+            <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

@@ -107,6 +107,7 @@ public class AdminController implements Initializable {
     private Button Event;
     @FXML
     private Button Ticket;
+    @FXML Button vt;
     /**
      * Initializes the controller class.
      */
@@ -116,12 +117,12 @@ public class AdminController implements Initializable {
         UserSession userSession = UserSession.getInstace(null);
 
         User u = userSession.getUser();
-        welcomemsg.setText("Welcome "+u.getNom());
+     //   welcomemsg.setText("Welcome "+u.getNom());
         
-       File file = new File("C:\\Users\\hamza\\OneDrive\\Bureau\\borgH\\Tocheck\\YYotalentT\\YYotalent\\src\\tn\\esprit\\YoTalent\\GUI\\images\\"+u.getImage());
+     //  File file = new File("C:\\Users\\hamza\\OneDrive\\Bureau\\borgH\\Tocheck\\YYotalentT\\YYotalent\\src\\tn\\esprit\\YoTalent\\GUI\\images\\"+u.getImage());
 
-       Image image = new Image(file.toURI().toString());
-        imgprofile.setImage(image);
+     //  Image image = new Image(file.toURI().toString());
+  //      imgprofile.setImage(image);
         Aff();
     }    
 
@@ -353,8 +354,26 @@ public class AdminController implements Initializable {
             Logger.getLogger(InterfaceTicketController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+         
+         
+         
     }
 
-
-    
+ @FXML
+    void vt(ActionEvent event) {
+        
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/VoteAdmin.fxml"));
+            Stage stage = (Stage) Ticket.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfaceTicketController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }
 }

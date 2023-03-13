@@ -13,17 +13,25 @@ public class Vote {
     private int idV; 
     private int nbrV; 
     private String dateV; 
-    private User idU;
+    private int idU;
     private Evenement idEV;
     private EspaceTalent idEST;
     private Video IdVid ;
     private String nomVid; 
+
+    public String getNomVid() {
+        return nomVid;
+    }
+
+    public void setNomVid(String nomVid) {
+        this.nomVid = nomVid;
+    }
     
     public Vote(){
         
     }
 
-    public Vote(int idV, int nbrV, String dateV, User idU, Evenement idEV, EspaceTalent idEST) {
+    public Vote(int idV, int nbrV, String dateV, int idU, Evenement idEV, EspaceTalent idEST) {
         this.idV = idV;
         this.nbrV = nbrV;
         this.dateV = dateV;
@@ -32,7 +40,7 @@ public class Vote {
         this.idEST = idEST;
     }
 
-    public Vote(int nbrV, String dateV, User idU, Evenement idEV, EspaceTalent idEST) {
+    public Vote(int nbrV, String dateV, int idU, Evenement idEV, EspaceTalent idEST) {
         this.nbrV = nbrV;
         this.dateV = dateV;
         this.idU = idU;
@@ -40,7 +48,7 @@ public class Vote {
         this.idEST = idEST;
     }
 
-    public Vote(int idV, int nbrV, String dateV, User idU, Video IdVid) {
+    public Vote(int idV, int nbrV, String dateV, int idU, Video IdVid) {
         this.idV = idV;
         this.nbrV = nbrV;
         this.dateV = dateV;
@@ -48,31 +56,38 @@ public class Vote {
         this.IdVid = IdVid;
     }
 
-    public Vote(int nbrV, String dateV, User idU, Video IdVid) {
-        this.nbrV = nbrV;
-        this.dateV = dateV;
-        this.idU = idU;
-        this.IdVid = IdVid;
-    }
-
-    public Vote(User idU, Video IdVid) {
-        this.idU = idU;
-        this.IdVid = IdVid;
-    }
-
-    public Vote(String dateV, User idU, Video IdVid) {
-        this.dateV = dateV;
-        this.idU = idU;
-        this.IdVid = IdVid;
-    }
-
-    public Vote(String dateV, User idU, String nomVid) {
+    public Vote(int idV, String dateV, int idU, String nomVid) {
+        this.idV = idV;
         this.dateV = dateV;
         this.idU = idU;
         this.nomVid = nomVid;
     }
 
-    public Vote(User idU, String nomVid) {
+    public Vote(int nbrV, String dateV, int idU, Video IdVid) {
+        this.nbrV = nbrV;
+        this.dateV = dateV;
+        this.idU = idU;
+        this.IdVid = IdVid;
+    }
+
+    public Vote(int idU, Video IdVid) {
+        this.idU = idU;
+        this.IdVid = IdVid;
+    }
+
+    public Vote(String dateV, int idU, Video IdVid) {
+        this.dateV = dateV;
+        this.idU = idU;
+        this.IdVid = IdVid;
+    }
+
+    public Vote(String dateV, int idU, String nomVid) {
+        this.dateV = dateV;
+        this.idU = idU;
+        this.nomVid = nomVid;
+    }
+
+    public Vote(int idU, String nomVid) {
         this.idU = idU;
         this.nomVid = nomVid;
     }
@@ -90,7 +105,7 @@ public class Vote {
         return dateV;
     }
 
-    public User getIdU() {
+    public int getIdU() {
         return idU;
     }
 
@@ -118,7 +133,7 @@ public class Vote {
         this.dateV = dateV;
     }
 
-    public void setIdU(User idU) {
+    public void setIdU(int idU) {
         this.idU = idU;
     }
 

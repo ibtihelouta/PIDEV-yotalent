@@ -15,7 +15,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="1156.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.AdminController">
+<AnchorPane id="AnchorPane" prefHeight="653.0" prefWidth="1156.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.VoteAdminController">
     <stylesheets>
         <URL value="@interfacetalent.css" />
     </stylesheets>
@@ -68,7 +68,7 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <Button fx:id="vt" blendMode="COLOR_BURN" layoutX="115.0" layoutY="243.0" mnemonicParsing="false" onAction="#vt" prefHeight="26.0" prefWidth="200.0" text="Voting management">
+      <Button blendMode="COLOR_BURN" layoutX="115.0" layoutY="243.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Voting management">
          <textFill>
             <LinearGradient endX="1.0" endY="1.0">
                <stops>
@@ -202,16 +202,7 @@
             <Image url="@images/a.png" />
          </image>
       </ImageView>
-      <Label layoutX="445.0" layoutY="11.0" prefHeight="30.0" prefWidth="191.0" text="Modify user:" textFill="#5f1163">
-         <font>
-            <Font name="Bodoni MT" size="23.0" />
-         </font>
-      </Label>
-      <TextField fx:id="nom" layoutX="565.0" layoutY="46.0" />
-      <TextField fx:id="email" layoutX="565.0" layoutY="85.0" />
-      <TextField fx:id="role" layoutX="565.0" layoutY="132.0" />
-      <TextField fx:id="image" layoutX="892.0" layoutY="206.0" prefHeight="26.0" prefWidth="99.0" />
-      <Label layoutX="885.0" layoutY="311.0" text="Delete user:" textFill="#5f1163">
+      <Label layoutX="885.0" layoutY="311.0" text="Delete Vote:" textFill="#5f1163">
          <font>
             <Font name="Bodoni MT" size="23.0" />
          </font>
@@ -219,13 +210,12 @@
       <TableView fx:id="tableviewuser" layoutX="503.0" layoutY="352.0" onMousePressed="#loadData" prefHeight="160.0" prefWidth="544.0">
          <columns>
             <TableColumn fx:id="iduserT" prefWidth="60.80000305175781" text="id" visible="false" />
-            <TableColumn fx:id="nomT" prefWidth="61.59991455078125" text="nom" />
-            <TableColumn fx:id="emailT" prefWidth="132.0" text="email" />
-            <TableColumn fx:id="roleT" prefWidth="121.5999755859375" text="role" />
-            <TableColumn fx:id="imageT" prefWidth="228.800048828125" text="image" />
+            <TableColumn fx:id="idVote" prefWidth="61.59991455078125" text="idVote" />
+            <TableColumn fx:id="idUser" prefWidth="132.0" text="IdUser" />
+            <TableColumn fx:id="dateVote" prefWidth="121.5999755859375" text="DateVote" />
+            <TableColumn fx:id="vid" prefWidth="228.800048828125" text="Vid" />
          </columns>
       </TableView>
-      <Button fx:id="uploadbutton" layoutX="1002.0" layoutY="206.0" mnemonicParsing="false" onAction="#uploadIMG" text="Upload" textFill="#312a94" />
       <ImageView fx:id="imgtmp" fitHeight="81.0" fitWidth="99.0" layoutX="1056.0" layoutY="381.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="search" layoutX="596.0" layoutY="255.0" />
       <Label fx:id="filepath" layoutX="573.0" layoutY="92.0" prefHeight="17.0" prefWidth="274.0" visible="false" />
@@ -241,7 +231,6 @@
             <Font name="Bodoni MT" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="595.0" layoutY="191.0" mnemonicParsing="false" onAction="#modifyData" prefHeight="31.0" prefWidth="128.0" text="Modify" textFill="#312a94" />
       <Button layoutX="1036.0" layoutY="310.0" mnemonicParsing="false" onAction="#deleteData" prefHeight="31.0" prefWidth="89.0" text="Delete" textFill="#312a94" />
    </children>
 </AnchorPane>

@@ -68,6 +68,9 @@ public class InterfaceCategController implements Initializable {
     @FXML
     private MediaView Vid3;
     
+     @FXML
+    private Button retour;
+    
     @FXML
     private RadioButton voted3;
     @FXML
@@ -266,8 +269,39 @@ public class InterfaceCategController implements Initializable {
             tray.setMessage("Nice To have your vote for !!" + tg.getSelectedToggle().toString().intern() );
             tray.setNotificationType(NotificationType.CUSTOM);
             tray.showAndDismiss(Duration.millis(3000));
+            
+            
+             try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceVotevF.fxml"));
+            Stage stage = (Stage) retour.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfacehomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         
         
     }
     
+    
+    @FXML
+    private void retour(ActionEvent event) {
+        
+           try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceVotevF.fxml"));
+            Stage stage = (Stage) retour.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfacehomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 }

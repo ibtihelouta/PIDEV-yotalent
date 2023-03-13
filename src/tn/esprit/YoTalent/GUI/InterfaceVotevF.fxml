@@ -82,11 +82,6 @@
             </LinearGradient>
          </textFill>
       </Button>
-      <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="491.0" layoutY="624.0" pickOnBounds="true">
-         <image>
-            <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
-         </image>
-      </ImageView>
       <Label layoutX="685.0" layoutY="35.0" prefHeight="56.0" prefWidth="292.0" text="Categories :" textFill="#3068a9">
          <font>
             <Font size="49.0" />
@@ -123,7 +118,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox alignment="TOP_CENTER" layoutX="478.0" layoutY="414.0" prefHeight="272.0" prefWidth="710.0">
+      <HBox alignment="TOP_CENTER" layoutX="478.0" layoutY="372.0" prefHeight="272.0" prefWidth="710.0">
          <children>
             <Button fx:id="Littéraire" mnemonicParsing="false" onAction="#ToLittéraire">
                <graphic>
@@ -171,6 +166,15 @@
                </stops>
             </LinearGradient>
          </textFill>
+      </Button>
+      <Button fx:id="retour" layoutX="477.0" layoutY="621.0" mnemonicParsing="false" onAction="#retour">
+         <graphic>
+            <ImageView fitHeight="62.0" fitWidth="68.0" pickOnBounds="true">
+               <image>
+                  <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>

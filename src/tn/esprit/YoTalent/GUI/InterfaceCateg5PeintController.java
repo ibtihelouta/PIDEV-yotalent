@@ -46,6 +46,8 @@ import tray.notification.TrayNotification;
  * @author hamza
  */
 public class InterfaceCateg5PeintController implements Initializable {
+    @FXML 
+    private Button retour ; 
     @FXML
     private Button deconnecter;
     @FXML
@@ -260,4 +262,20 @@ private Connection con = MaConnexion.getInstance().getCnx();
         
     }
     
+      @FXML
+    private void retour(ActionEvent event) {
+        
+           try {
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/InterfaceVotevF.fxml"));
+            Stage stage = (Stage) retour.getScene().getWindow();
+            stage.close();
+            Scene scene = new Scene(root);
+            
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(InterfacehomeController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
 }
