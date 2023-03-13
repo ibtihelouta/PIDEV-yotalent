@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="411.0" prefWidth="721.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceVoyageController">
+    <!--<stylesheets>
+        <URL value="@../../../../../../../GUI/GUI/interfacetalent.css" />
+    </stylesheets>-->
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="467.0" fitWidth="803.0" layoutX="1.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="54.0" layoutY="-2.0" prefHeight="47.0" prefWidth="173.0" text="YoTalent" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni MT" size="38.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4000000059604645" green="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="103.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="User management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9529411792755127" green="0.7960784435272217" blue="0.9607843160629272" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="139.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Talent space management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7843137383460999" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="165.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Voting management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9529411792755127" green="0.7960784435272217" blue="0.9607843160629272" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="192.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Contract management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7843137383460999" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="222.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Event management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="41.0" layoutY="251.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="80.0" fitWidth="93.0" layoutX="94.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/325376049_3425244091127302_160168539439135435_n.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ExitTR" blendMode="COLOR_BURN" layoutX="35.0" layoutY="393.0" mnemonicParsing="false" text="Exit">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Label fx:id="LocalisationError" layoutX="282.0" layoutY="170.0" textFill="#f3cbf5">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="IdTR" layoutX="384.0" layoutY="244.0" />
+      <TextField fx:id="destinationTR" layoutX="384.0" layoutY="277.0" />
+      <TableView fx:id="AfficherTr" layoutX="331.0" layoutY="70.0" prefHeight="161.0" prefWidth="461.0">
+        <columns>
+          <TableColumn fx:id="colDateDTR" prefWidth="129.0" text="DateDTR" />
+            <TableColumn fx:id="colDateRTR" prefWidth="149.0" text="DateRTR" />
+            <TableColumn fx:id="ColDes" prefWidth="182.0" text="destination" />
+        </columns>
+      </TableView>
+      <Label layoutX="316.0" layoutY="248.0" text="idTR:" textFill="#171117">
+         <font>
+            <Font name="Bodoni MT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="317.0" layoutY="319.0" text="DateDTR:" textFill="#392f39">
+         <font>
+            <Font name="Bodoni MT" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="312.0" layoutY="347.0" text="DateRTR:" textFill="#281f28">
+         <font>
+            <Font name="Bodoni MT" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="DeletTR" layoutX="312.0" layoutY="281.0" text="destination:" textFill="#1a141b">
+         <font>
+            <Font name="Bodoni MT" size="13.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="Backv" fitHeight="30.0" fitWidth="50.0" layoutX="301.0" layoutY="216.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#gotovoy" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/fleche-droite%20(1).png" />
+         </image>
+      </ImageView>
+      <Accordion />
+      <Button fx:id="addVoyage" layoutX="310.0" layoutY="392.0" mnemonicParsing="false" onAction="#btnAddPL" prefHeight="25.0" prefWidth="112.0" text="Add " />
+      <DatePicker fx:id="dateV" layoutX="381.0" layoutY="314.0" prefHeight="25.0" prefWidth="155.0" />
+      <DatePicker fx:id="dateRV" layoutX="381.0" layoutY="348.0" prefHeight="25.0" prefWidth="155.0" />
+      <Button fx:id="updateVoyage" layoutX="442.0" layoutY="392.0" mnemonicParsing="false" onAction="#btnModifyC" prefHeight="25.0" prefWidth="112.0" text="Update" />
+      <Button fx:id="deleteVoyage" layoutX="572.0" layoutY="392.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="112.0" text="Delete" />
+      <TextField fx:id="Recherche" layoutX="371.0" layoutY="42.0" onAction="#Recherche" onKeyPressed="#Recherche" prefHeight="25.0" prefWidth="403.0" />
+      <Label layoutX="302.0" layoutY="46.0" text="Rechercher" />
+      <Button fx:id="tri" layoutX="644.0" layoutY="290.0" mnemonicParsing="false" onAction="#btnTrieparNom2" prefHeight="25.0" prefWidth="77.0" text="Tri" />
+      <Label contentDisplay="CENTER" layoutX="479.0" layoutY="-9.0" prefHeight="47.0" prefWidth="149.0" text="Voyage" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni MT" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.2368421107530594" green="0.11293859779834747" blue="0.11293859779834747" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+      <Button layoutX="697.0" layoutY="392.0" mnemonicParsing="false" onAction="#Retour1" text="static" />
+    <!-- <Button fx:id="bTri" layoutX="671.0" layoutY="252.0" mnemonicParsing="false" onAction="#btnTrieparNom2" onKeyPressed="#Recherche" prefHeight="25.0" prefWidth="77.0" text="Tri" />-->
+   </children>
+</AnchorPane>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="684.0" prefWidth="1136.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceVotevFController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1226.0">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="720.0" fitWidth="1243.0" layoutX="-12.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="afficherET" blendMode="COLOR_BURN" layoutX="112.0" layoutY="347.0" mnemonicParsing="false" onAction="#afficherET" prefHeight="23.0" prefWidth="200.0" text="Talent space">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <ImageView fitHeight="102.0" fitWidth="146.0" layoutX="146.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="111.0" fitWidth="151.0" layoutX="145.0" layoutY="98.0">
+         <image>
+            <Image url="@images/a.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="155.0" layoutY="21.0" prefHeight="47.0" prefWidth="150.0" text="YoTalent">
+         <font>
+            <Font size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="deconnecter" layoutX="22.0" layoutY="522.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="20.0" prefWidth="127.0" text="déconnecter">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="491.0" layoutY="624.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="685.0" layoutY="35.0" prefHeight="56.0" prefWidth="292.0" text="Categories :" textFill="#3068a9">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <HBox alignment="TOP_CENTER" layoutX="478.0" layoutY="153.0" prefHeight="272.0" prefWidth="710.0">
+         <children>
+            <Button fx:id="Theatre" mnemonicParsing="false" onAction="#ToTheatre" textAlignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/334904634_955830792246685_3012553228080202398_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Musique" mnemonicParsing="false" onAction="#ToMusique">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/334907852_924812351885838_4632425843149717834_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Danse" mnemonicParsing="false" onAction="#ToDanse">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/251342664_1955638994610593_2234747576646800847_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="TOP_CENTER" layoutX="478.0" layoutY="414.0" prefHeight="272.0" prefWidth="710.0">
+         <children>
+            <Button fx:id="Littéraire" mnemonicParsing="false" onAction="#ToLittéraire">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/334895893_763497538351845_4854496159392228911_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Design" mnemonicParsing="false" onAction="#ToDesign">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/334879281_1132425164116747_1341433034721445837_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="Peinture" mnemonicParsing="false" onAction="#ToPeinture">
+               <graphic>
+                  <ImageView fitHeight="200.0" fitWidth="200.0">
+                     <image>
+                        <Image url="@images/334902569_1322131108347457_783117165676067825_n.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <Button fx:id="afficherET" blendMode="COLOR_BURN" layoutX="112.0" layoutY="314.0" mnemonicParsing="false" onAction="#afficherET" prefHeight="23.0" prefWidth="200.0" text="Consulter Evenement">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+   </children>
+</AnchorPane>

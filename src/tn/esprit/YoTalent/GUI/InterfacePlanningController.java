@@ -487,7 +487,7 @@ ServicePlanning sp = new ServicePlanning();
         
 
         try {
-              com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\Users\\ASUS\\Downloads\\sarra+ ibtihel\\sarra+ ibtihel\\Y\\YYotalent\\src\\tn\\esprit\\YoTalent\\GUI\\images\\a.png");
+              com.itextpdf.text.Image img = com.itextpdf.text.Image.getInstance("C:\\Users\\Windows\\Desktop\\YYotalentT\\src\\tn\\esprit\\YoTalent\\GUI\\images\\a.png");
                img.scaleAbsoluteWidth(200);
                img.scaleAbsoluteHeight(50);
                img.setAlignment(com.itextpdf.text.Image.ALIGN_CENTER);

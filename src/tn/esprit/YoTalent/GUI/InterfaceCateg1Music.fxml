@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="684.0" prefWidth="1136.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceCateg1MusicController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1226.0">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <Button blendMode="COLOR_BURN" layoutX="112.0" layoutY="347.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Talent space">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <ImageView fitHeight="102.0" fitWidth="146.0" layoutX="146.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="111.0" fitWidth="151.0" layoutX="145.0" layoutY="98.0">
+         <image>
+            <Image url="@images/a.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="155.0" layoutY="21.0" prefHeight="47.0" prefWidth="150.0" text="YoTalent">
+         <font>
+            <Font size="38.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="deconnecter" layoutX="22.0" layoutY="522.0" mnemonicParsing="false" onAction="#deconnecter" prefHeight="20.0" prefWidth="127.0" text="déconnecter">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <ImageView fitHeight="62.0" fitWidth="68.0" layoutX="448.0" layoutY="4.0" pickOnBounds="true">
+         <image>
+            <Image url="@images/332441881_712863110386637_4712139055551852241_n.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="catg" layoutX="686.0" layoutY="21.0" prefHeight="56.0" prefWidth="292.0" text="Music :" textFill="#3068a9">
+         <font>
+            <Font size="49.0" />
+         </font>
+      </Label>
+      <Button fx:id="afficherET" blendMode="COLOR_BURN" layoutX="112.0" layoutY="314.0" mnemonicParsing="false" onAction="#afficherET" prefHeight="23.0" prefWidth="200.0" text="Consulter Evenement">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <VBox layoutX="485.0" layoutY="103.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted" layoutX="34.0" layoutY="237.0" mnemonicParsing="false" text="text" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid1" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted1" layoutX="32.0" layoutY="237.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid2" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted2" layoutX="45.0" layoutY="236.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid3" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted3" layoutX="33.0" layoutY="233.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid4" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted4" layoutX="35.0" layoutY="235.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="279.0" prefWidth="261.0">
+                     <children>
+                        <MediaView fx:id="Vid5" fitHeight="200.0" fitWidth="200.0" layoutX="31.0" layoutY="14.0" />
+                        <RadioButton fx:id="voted5" layoutX="54.0" layoutY="240.0" mnemonicParsing="false" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="voter" layoutX="1084.0" layoutY="666.0" mnemonicParsing="false" onAction="#voter" style="-fx-background-color: 2D93F9;" text="voter" textAlignment="CENTER">
+         <effect>
+            <Reflection />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

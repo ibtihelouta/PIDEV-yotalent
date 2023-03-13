@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tn.esprit.YoTalent.GUI.InterfaceContratController">
+   <children>
+      <ImageView fx:id="leftC" fitHeight="576.0" fitWidth="1049.0" layoutX="-44.0" layoutY="-12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/333040156_733440318135605_8771052738172614562_n.png" />
+         </image>
+      </ImageView>
+      <Label contentDisplay="CENTER" layoutX="78.0" layoutY="14.0" prefHeight="47.0" prefWidth="173.0" text="YoTalent" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni MT" size="38.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4000000059604645" green="0.07450980693101883" blue="0.4117647111415863" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <ImageView fitHeight="116.0" fitWidth="96.0" layoutX="106.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/325376049_3425244091127302_160168539439135435_n.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="ExitC" blendMode="COLOR_BURN" layoutX="14.0" layoutY="527.0" mnemonicParsing="false" text="Exit">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <TableView fx:id="afficherContrat" layoutX="359.0" layoutY="88.0" onSort="#getContrat" prefHeight="243.0" prefWidth="600.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="0.0" />
+            <TableColumn fx:id="colNomC" minWidth="0.0" prefWidth="182.0" text="Nom" />
+            <TableColumn fx:id="colDateDC" prefWidth="181.0" text="DateDC" />
+            <TableColumn fx:id="colDateFC" prefWidth="236.0" text="DateFC" />
+            <TableColumn minWidth="0.0" prefWidth="0.0" />
+         </columns>
+      </TableView>
+      <AnchorPane layoutX="353.0" layoutY="321.0" prefHeight="243.0" prefWidth="612.0">
+         <children>
+            <TextField fx:id="idC" layoutX="70.0" layoutY="19.0" prefHeight="25.0" prefWidth="173.0" />
+            <TextField fx:id="NomC" layoutX="70.0" layoutY="53.0" prefHeight="25.0" prefWidth="173.0" />
+            <Label layoutX="17.0" layoutY="30.0" text="Id:">
+               <font>
+                  <Font name="Bodoni MT" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="59.0" text="Nom:">
+               <font>
+                  <Font name="Bodoni MT" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="91.0" text="Date debut">
+               <font>
+                  <Font name="Bodoni MT" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="133.0" text="Date fin:">
+               <font>
+                  <Font name="Bodoni MT" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="addContrat" layoutX="14.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnAddPL" prefHeight="25.0" prefWidth="112.0" text="Add " />
+            <Button fx:id="UpdateContrat" layoutX="131.0" layoutY="200.0" mnemonicParsing="false" onAction="#btnModifyC" prefHeight="25.0" prefWidth="112.0" text="Update" />
+            <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="143.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Assma/YYotalent/src/tn/esprit/YoTalent/GUI/images/330967651_1683295145422694_8952661565213849821_n.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="deleteContrat" layoutX="257.0" layoutY="200.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="26.0" prefWidth="112.0" text="Delete" />
+            <ImageView fitHeight="19.0" fitWidth="19.0" layoutX="259.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../Assma/YYotalent/src/tn/esprit/YoTalent/GUI/images/330881818_949991529700335_4390469303463191046_n.png" />
+               </image>
+            </ImageView>
+            <DatePicker fx:id="DateFC" layoutX="70.0" layoutY="129.0" />
+            <DatePicker fx:id="DateDC" layoutX="70.0" layoutY="87.0" />
+            <Button fx:id="pdf" layoutX="390.0" layoutY="201.0" mnemonicParsing="false" onAction="#ActionPerformed" prefHeight="25.0" prefWidth="112.0" text="PDF" />
+            <ImageView fx:id="BackP" fitHeight="47.0" fitWidth="45.0" layoutX="561.0" layoutY="22.0" onMouseClicked="#gotovoy" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/fleche-droite%20(1).png" />
+               </image>
+            </ImageView>
+            <Button fx:id="bTri" layoutX="392.0" layoutY="26.0" mnemonicParsing="false" onAction="#btnTrieparNom" prefHeight="25.0" prefWidth="77.0" text="Tri" />
+            <Button layoutX="298.0" layoutY="79.0" mnemonicParsing="false" onAction="#Retour2" text="envoyer mail" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="Recherche" layoutX="490.0" layoutY="49.0" onKeyPressed="#Recherche" prefHeight="25.0" prefWidth="403.0" />
+      <Label layoutX="395.0" layoutY="53.0" text="Rechercher" />
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="113.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="User management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9529411792755127" green="0.7960784435272217" blue="0.9607843160629272" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="149.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="200.0" text="Talent space management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7843137383460999" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="175.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Voting management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9529411792755127" green="0.7960784435272217" blue="0.9607843160629272" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="202.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Contract management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7843137383460999" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="232.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Event management">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Button>
+      <Button blendMode="COLOR_BURN" layoutX="51.0" layoutY="261.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="200.0" text="Ticket and refund management">
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7833333611488342" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <font>
+            <Font name="Arial Rounded MT Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label contentDisplay="CENTER" layoutX="607.0" prefHeight="47.0" prefWidth="185.0" text="Contrat" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="Bodoni MT" size="30.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+         <textFill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.1103999987244606" green="0.21519237756729126" blue="0.23000000417232513" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </textFill>
+      </Label>
+   </children>
+</AnchorPane>

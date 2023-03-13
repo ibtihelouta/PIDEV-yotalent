@@ -41,11 +41,13 @@ import javafx.stage.Stage;
 import tn.esprit.YoTalent.entities.Evenement;
 import tn.esprit.YoTalent.entities.Remboursement;
 import tn.esprit.YoTalent.entities.Ticket;
+import tn.esprit.YoTalent.entities.User;
 import tn.esprit.YoTalent.services.ServiceEvent;
 import tn.esprit.YoTalent.services.ServiceRemboursement;
 import tn.esprit.YoTalent.services.ServiceTicket;
 import tn.esprit.YoTalent.utils.JavaMail;
 import tn.esprit.YoTalent.utils.MaConnexion;
+import tn.esprit.YoTalent.utils.UserSession;
 
 /**
  * FXML Controller class
@@ -53,8 +55,6 @@ import tn.esprit.YoTalent.utils.MaConnexion;
  * @author hadir
  */
 public class InterfaceRemboursementController implements Initializable {
-    @FXML
-    private Button ModifyR;
     @FXML
     private TableColumn<Remboursement, Integer> col2;
     @FXML
@@ -66,14 +66,7 @@ public class InterfaceRemboursementController implements Initializable {
     @FXML
     private Button AddTr;
     @FXML
-    private DatePicker dateR;
-    @FXML
     private ImageView back;
-      @FXML
-    private TextField Recherche;
-      
-       @FXML
-    private TextField idRb;
     @FXML
     private TableView<Remboursement> TableR;
     ServiceRemboursement Tt=new ServiceRemboursement();
@@ -223,25 +216,19 @@ public class InterfaceRemboursementController implements Initializable {
     
     
 
-    @FXML
-    private void btnModifyR(ActionEvent event) {
-     
- 
-       
-           
-    }
 
     
 
     @FXML
     private void btnDeleteR(ActionEvent event) throws SQLException ,Exception {
         
-        
+              UserSession userSession = UserSession.getInstace(null);
+        User u = userSession.getUser();
          Remboursement r = TableR.getItems().get(TableR.getSelectionModel().getSelectedIndex());
       
         try {
             Tt.deletOne(r);
-            String mail ="hadir.elayeb@esprit.tn";
+            String mail = u.getEmail();
             JavaMail.sendMai(mail);
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceTicketController.class.getName()).log(Level.SEVERE, null, ex);
@@ -309,7 +296,6 @@ public class InterfaceRemboursementController implements Initializable {
     }
     
     
-    @FXML
     private void Recherche(KeyEvent event) throws SQLException {
         ServiceRemboursement Tt=new ServiceRemboursement();
      Remboursement t = new Remboursement();
@@ -320,10 +306,12 @@ public class InterfaceRemboursementController implements Initializable {
     private void valider(ActionEvent event) throws SQLException, Exception {
         ServiceRemboursement sr = new ServiceRemboursement();
         ServiceTicket st = new ServiceTicket();
+              UserSession userSession = UserSession.getInstace(null);
+        User u = userSession.getUser();
          Remboursement r = TableR.getItems().get(TableR.getSelectionModel().getSelectedIndex());
          r.setDecision(true);
          sr.updateOne(r);
-         String mail ="hadir.elayeb@esprit.tn";
+         String mail = u.getEmail();
          JavaMail.sendMail(mail);
          Ticket t = new Ticket();
          t.setIdT(r.getIdT());

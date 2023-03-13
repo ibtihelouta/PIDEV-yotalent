@@ -3,32 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/entities/Remboursement.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/AfficherT.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/map/_config.yml</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/services/ServicePlanning.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/utils/JavaMail.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/entities/Planning.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceTicket.fxml</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/MapController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/EspaceController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/services/ServiceTicket.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/css/styleoffre.css</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceRemboursement.fxml</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/services/ServiceEvent.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfacehomeController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/AffichageEvent.fxml</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/utils/MaConnexion.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/tests/FXmain.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/services/ServiceRemboursement.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfacePlanningController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/espace.fxml</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/MypaneController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/entities/Ticket.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceEventController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/AffichagePlanning.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceTicketController.java</file>
-            <file>file:/C:/Users/ASUS/Downloads/sarra+%20ibtihel/sarra+%20ibtihel/Y/YYotalent/src/tn/esprit/YoTalent/GUI/InterfaceRemboursementController.java</file>
+            <file>file:/C:/Users/hamza/OneDrive/Bureau/borgH/Tocheck/YYotalentT/YYotalentT/src/tn/esprit/YoTalent/GUI/InterfaceParticF.fxml</file>
+            <file>file:/C:/Users/hamza/OneDrive/Bureau/borgH/Tocheck/YYotalentT/YYotalentT/src/tn/esprit/YoTalent/GUI/InterfaceParticFController.java</file>
+            <file>file:/C:/Users/hamza/OneDrive/Bureau/borgH/Tocheck/YYotalentT/YYotalentT/src/tn/esprit/YoTalent/GUI/InterfaceVotevFController.java</file>
         </group>
     </open-files>
 </project-private>
